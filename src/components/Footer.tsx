@@ -1,4 +1,7 @@
 
+import { Mail } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
 const Footer = () => {
   const quickLinks = [
     "Home",
@@ -17,6 +20,10 @@ const Footer = () => {
     "Sports Medicine",
     "Trauma Care"
   ];
+
+  const handleSendEmail = () => {
+    window.location.href = "mailto:gurudeok@gmail.com";
+  };
 
   return (
     <footer className="bg-slate-900 text-slate-300">
@@ -76,7 +83,16 @@ const Footer = () => {
               </div>
               <div className="flex items-center space-x-3">
                 <span className="text-cyan-400">✉️</span>
-                <span>[email protected]</span>
+                <div className="flex items-center space-x-2">
+                  <span>gurudeok@gmail.com</span>
+                  <Button 
+                    size="sm" 
+                    onClick={handleSendEmail}
+                    className="bg-cyan-500 hover:bg-cyan-600 text-white px-2 py-1 h-auto"
+                  >
+                    <Mail size={16} />
+                  </Button>
+                </div>
               </div>
               <div className="flex items-center space-x-3">
                 <span className="text-cyan-400">🕒</span>
