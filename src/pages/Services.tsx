@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -11,7 +10,6 @@ const Services = () => {
     {
       title: "Knee Surgeries",
       description: "Advanced knee procedures for optimal mobility and function",
-      image: "/lovable-uploads/22a9001a-0766-4a86-b778-f8bdbe313c26.png",
       link: "/knee-surgeries",
       procedures: [
         "ACL Reconstruction",
@@ -24,7 +22,6 @@ const Services = () => {
     {
       title: "Shoulder & Elbow",
       description: "Comprehensive shoulder and elbow reconstruction services",
-      image: "/lovable-uploads/243a83c3-ea4b-4413-a11e-c9de37592930.png",
       link: "/shoulder-elbow",
       procedures: [
         "Rotator Cuff Repair",
@@ -37,7 +34,6 @@ const Services = () => {
     {
       title: "Hip & Pelvis",
       description: "Modern hip replacement and arthroscopic solutions",
-      image: "/lovable-uploads/276003e9-a200-45ae-b1f5-b39c6ae3f1eb.png",
       link: "/hip-pelvis",
       procedures: [
         "Total Hip Replacement",
@@ -50,7 +46,6 @@ const Services = () => {
     {
       title: "Spine Surgery",
       description: "Minimally invasive spine surgery and pain management",
-      image: "/lovable-uploads/d3d7a44e-0f69-496f-b288-3983f1d98963.png",
       link: "/spine",
       procedures: [
         "Lumbar Fusion",
@@ -63,7 +58,6 @@ const Services = () => {
     {
       title: "Sports Medicine",
       description: "Expert care for athletic injuries and performance optimization",
-      image: "/lovable-uploads/22a9001a-0766-4a86-b778-f8bdbe313c26.png",
       link: "/sports-medicine",
       procedures: [
         "ACL Injuries Treatment",
@@ -76,7 +70,6 @@ const Services = () => {
     {
       title: "Hand & Wrist",
       description: "Precision hand and wrist surgery for full functionality",
-      image: "/lovable-uploads/243a83c3-ea4b-4413-a11e-c9de37592930.png",
       link: "/hand-wrist",
       procedures: [
         "Carpal Tunnel Release",
@@ -89,7 +82,6 @@ const Services = () => {
     {
       title: "Foot & Ankle",
       description: "Complete foot and ankle treatment for active lifestyles",
-      image: "/lovable-uploads/276003e9-a200-45ae-b1f5-b39c6ae3f1eb.png",
       link: "/foot-ankle",
       procedures: [
         "Bunion Surgery",
@@ -117,35 +109,24 @@ const Services = () => {
           <div className="grid lg:grid-cols-2 gap-8">
             {serviceCategories.map((category, index) => (
               <Card key={index} className="bg-slate-700/50 border-slate-600 overflow-hidden hover:bg-slate-700/70 transition-all duration-300">
-                <CardContent className="p-0">
-                  <div className="flex">
-                    <div className="w-1/3">
-                      <img 
-                        src={category.image} 
-                        alt={category.title}
-                        className="w-full h-48 object-cover"
-                      />
-                    </div>
-                    <div className="w-2/3 p-6">
-                      <h3 className="text-2xl font-bold text-white mb-3">{category.title}</h3>
-                      <p className="text-slate-300 mb-4 text-sm">{category.description}</p>
-                      
-                      <div className="space-y-2 mb-6">
-                        {category.procedures.map((procedure, procIndex) => (
-                          <div key={procIndex} className="flex items-center text-sm text-slate-400">
-                            <ChevronRight className="w-4 h-4 text-cyan-400 mr-2" />
-                            {procedure}
-                          </div>
-                        ))}
+                <CardContent className="p-6">
+                  <h3 className="text-2xl font-bold text-white mb-3">{category.title}</h3>
+                  <p className="text-slate-300 mb-4 text-sm">{category.description}</p>
+                  
+                  <div className="space-y-2 mb-6">
+                    {category.procedures.map((procedure, procIndex) => (
+                      <div key={procIndex} className="flex items-center text-sm text-slate-400">
+                        <ChevronRight className="w-4 h-4 text-cyan-400 mr-2" />
+                        {procedure}
                       </div>
-                      
-                      <Link to={category.link}>
-                        <Button className="bg-cyan-500 hover:bg-cyan-600 text-white">
-                          Learn More
-                        </Button>
-                      </Link>
-                    </div>
+                    ))}
                   </div>
+                  
+                  <Link to={category.link}>
+                    <Button className="bg-cyan-500 hover:bg-cyan-600 text-white">
+                      Learn More
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
