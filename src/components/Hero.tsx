@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 
 const Hero = () => {
@@ -15,7 +16,7 @@ const Hero = () => {
               orthopedic condition by Dr. Gurudeo Kumar and his 
               expert team.
             </p>
-            <div className="flex space-x-4">
+            <div className="flex justify-end">
               <Button className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 text-lg">
                 Book Appointment
               </Button>
