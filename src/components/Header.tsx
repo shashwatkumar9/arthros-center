@@ -1,5 +1,7 @@
+
 import { Search, Phone, Mail, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import SearchCommand from "./SearchCommand";
 import {
   HoverCard,
@@ -63,7 +65,7 @@ const Header = () => {
     return descriptions[title] || "Specialized procedures and treatments";
   };
 
-  const renderHoverMenu = (title: string, services: { category: string; items: string[] }[]) => (
+  const renderHoverMenu = (title: string, services: { category: string; items: string[] }[], linkPath: string) => (
     <HoverCard openDelay={0} closeDelay={100}>
       <HoverCardTrigger className="hover:text-cyan-400 transition-colors flex items-center space-x-1 bg-transparent border-none text-white text-sm cursor-pointer px-3 py-2 rounded-md hover:bg-slate-600/50">
         <span>{title}</span>
@@ -78,23 +80,20 @@ const Header = () => {
           <div className="grid grid-cols-3 gap-6">
             {services.map((service, index) => (
               <div key={index} className="space-y-3">
-                <a 
-                  href={`https://arthroscenter.com/${service.category.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
-                  className="block"
-                >
+                <Link to={linkPath} className="block">
                   <h4 className="text-slate-800 font-semibold text-base mb-3 text-blue-700 border-b border-blue-100 pb-2 hover:text-blue-900 transition-colors">
                     {service.category}
                   </h4>
-                </a>
+                </Link>
                 <div className="space-y-1">
                   {service.items.map((item, itemIndex) => (
-                    <a
+                    <button
                       key={itemIndex}
-                      href={`https://arthroscenter.com/${item.toLowerCase().replace(/\s+/g, '-').replace(/'/g, '').replace(/&/g, 'and')}`}
+                      onClick={() => window.open('https://calendar.app.google/eSJeS2KsEsS5sbri8', '_blank')}
                       className="block w-full text-slate-600 hover:text-blue-700 hover:bg-blue-50 text-left text-sm py-2 px-3 rounded-md transition-all duration-200 hover:translate-x-1"
                     >
                       {item}
-                    </a>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -134,19 +133,24 @@ const Header = () => {
       {/* Main Header */}
       <header className="bg-slate-800/90 backdrop-blur-sm text-white py-4 sticky top-0 z-50">
         <div className="container mx-auto flex items-center justify-between px-4">
-          <div className="text-2xl font-bold">Arthros Center</div>
+          <Link to="/" className="text-2xl font-bold hover:text-cyan-400 transition-colors">
+            Arthros Center
+          </Link>
           
           <div className="flex items-center space-x-4 flex-1 max-w-md mx-8">
             <SearchCommand />
           </div>
 
           <nav className="flex items-center space-x-6">
-            <a href="#" className="hover:text-cyan-400 transition-colors">Home</a>
+            <Link to="/" className="hover:text-cyan-400 transition-colors">Home</Link>
             <a href="#" className="hover:text-cyan-400 transition-colors">About Us</a>
             <a href="#" className="hover:text-cyan-400 transition-colors">Services</a>
             <a href="#" className="hover:text-cyan-400 transition-colors">Doctors</a>
             <a href="#" className="hover:text-cyan-400 transition-colors">Contact</a>
-            <Button className="bg-blue-600 hover:bg-blue-700 text-white px-6">
+            <Button 
+              className="bg-blue-600 hover:bg-blue-700 text-white px-6"
+              onClick={() => window.open('https://calendar.app.google/eSJeS2KsEsS5sbri8', '_blank')}
+            >
               Appointment
             </Button>
           </nav>
@@ -157,27 +161,27 @@ const Header = () => {
       <div className="bg-slate-700 text-white py-3 shadow-lg">
         <div className="container mx-auto px-4">
           <nav className="flex space-x-2 text-sm">
-            <a href="https://arthroscenter.com/knee-surgeries" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
-              {renderHoverMenu("Knee Surgeries", kneeServices)}
-            </a>
-            <a href="https://arthroscenter.com/shoulder-elbow" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
-              {renderHoverMenu("Shoulder & Elbow", shoulderServices)}
-            </a>
-            <a href="https://arthroscenter.com/hip-pelvis" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
-              {renderHoverMenu("Hip & Pelvis", hipServices)}
-            </a>
-            <a href="https://arthroscenter.com/spine" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
-              {renderHoverMenu("Spine", spineServices)}
-            </a>
-            <a href="https://arthroscenter.com/sports-medicine" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
-              {renderHoverMenu("Sports Medicine", sportsServices)}
-            </a>
-            <a href="https://arthroscenter.com/hand-wrist" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
-              {renderHoverMenu("Hand & Wrist", handServices)}
-            </a>
-            <a href="https://arthroscenter.com/foot-ankle" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
-              {renderHoverMenu("Foot & Ankle", footServices)}
-            </a>
+            <Link to="/knee-surgeries" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
+              {renderHoverMenu("Knee Surgeries", kneeServices, "/knee-surgeries")}
+            </Link>
+            <Link to="/shoulder-elbow" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
+              {renderHoverMenu("Shoulder & Elbow", shoulderServices, "/shoulder-elbow")}
+            </Link>
+            <Link to="/hip-pelvis" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
+              {renderHoverMenu("Hip & Pelvis", hipServices, "/hip-pelvis")}
+            </Link>
+            <Link to="/spine" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
+              {renderHoverMenu("Spine", spineServices, "/spine")}
+            </Link>
+            <Link to="/sports-medicine" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
+              {renderHoverMenu("Sports Medicine", sportsServices, "/sports-medicine")}
+            </Link>
+            <Link to="/hand-wrist" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
+              {renderHoverMenu("Hand & Wrist", handServices, "/hand-wrist")}
+            </Link>
+            <Link to="/foot-ankle" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
+              {renderHoverMenu("Foot & Ankle", footServices, "/foot-ankle")}
+            </Link>
           </nav>
         </div>
       </div>
