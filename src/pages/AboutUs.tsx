@@ -30,7 +30,8 @@ const AboutUs = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h1 className="text-5xl font-bold text-white mb-6">About Dr. Gurudeo Kumar</h1>
+            <h1 className="text-5xl font-bold text-white mb-6">About Arthros Center</h1>
+            <h2 className="text-3xl font-semibold text-cyan-400 mb-6">Dr. Gurudeo Kumar</h2>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto">
               Leading orthopaedic surgeon in Patna, renowned for expertise in knee and shoulder surgeries, 
               arthroscopy, and sports medicine
