@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -87,6 +86,13 @@ import CarpalTunnelRelease from "./pages/CarpalTunnelRelease";
 import TriggerFingerSurgery from "./pages/TriggerFingerSurgery";
 import DupuytrensSurgery from "./pages/DupuytrensSurgery";
 import HandFractureRepair from "./pages/HandFractureRepair";
+import WristArthroscopy from "./pages/WristArthroscopy";
+import TFCCRepair from "./pages/TFCCRepair";
+import WristFractureSurgery from "./pages/WristFractureSurgery";
+import GanglionCystRemoval from "./pages/GanglionCystRemoval";
+import CubitalTunnelSurgery from "./pages/CubitalTunnelSurgery";
+import NerveRepair from "./pages/NerveRepair";
+import NerveTransfer from "./pages/NerveTransfer";
 
 const queryClient = new QueryClient();
 
@@ -197,6 +203,13 @@ const App = () => (
           <Route path="/trigger-finger-surgery" element={<TriggerFingerSurgery />} />
           <Route path="/dupuytrens-surgery" element={<DupuytrensSurgery />} />
           <Route path="/hand-fracture-repair" element={<HandFractureRepair />} />
+          <Route path="/wrist-arthroscopy" element={<WristArthroscopy />} />
+          <Route path="/tfcc-repair" element={<TFCCRepair />} />
+          <Route path="/wrist-fracture-surgery" element={<WristFractureSurgery />} />
+          <Route path="/ganglion-cyst-removal" element={<GanglionCystRemoval />} />
+          <Route path="/cubital-tunnel-surgery" element={<CubitalTunnelSurgery />} />
+          <Route path="/nerve-repair" element={<NerveRepair />} />
+          <Route path="/nerve-transfer" element={<NerveTransfer />} />
           
           {/* Hand & Wrist Category Pages */}
           <Route path="/hand-surgery-procedures" element={<HandSurgeryProcedures />} />

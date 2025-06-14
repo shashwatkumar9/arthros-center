@@ -164,9 +164,35 @@ const Header = () => {
   ];
 
   const handServices = [
-    { category: "Hand Surgery", items: ["Carpal Tunnel Release", "Trigger Finger Surgery", "Dupuytren's Surgery", "Hand Fracture Repair"] },
-    { category: "Wrist Surgery", items: ["Wrist Arthroscopy", "TFCC Repair", "Wrist Fracture Surgery", "Ganglion Cyst Removal"] },
-    { category: "Nerve Surgery", items: ["Cubital Tunnel Surgery", "Nerve Repair", "Nerve Transfer"] }
+    { 
+      category: "Hand Surgery", 
+      route: "/hand-surgery-procedures",
+      items: [
+        { name: "Carpal Tunnel Release", route: "/carpal-tunnel-release" },
+        { name: "Trigger Finger Surgery", route: "/trigger-finger-surgery" },
+        { name: "Dupuytren's Surgery", route: "/dupuytrens-surgery" },
+        { name: "Hand Fracture Repair", route: "/hand-fracture-repair" }
+      ]
+    },
+    { 
+      category: "Wrist Surgery", 
+      route: "/wrist-surgery-procedures",
+      items: [
+        { name: "Wrist Arthroscopy", route: "/wrist-arthroscopy" },
+        { name: "TFCC Repair", route: "/tfcc-repair" },
+        { name: "Wrist Fracture Surgery", route: "/wrist-fracture-surgery" },
+        { name: "Ganglion Cyst Removal", route: "/ganglion-cyst-removal" }
+      ]
+    },
+    { 
+      category: "Nerve Surgery", 
+      route: "/nerve-surgery-procedures",
+      items: [
+        { name: "Cubital Tunnel Surgery", route: "/cubital-tunnel-surgery" },
+        { name: "Nerve Repair", route: "/nerve-repair" },
+        { name: "Nerve Transfer", route: "/nerve-transfer" }
+      ]
+    }
   ];
 
   const footServices = [
@@ -383,7 +409,7 @@ const Header = () => {
     </HoverCard>
   );
 
-  const renderHoverMenu = (title: string, services: { category: string; items: string[] }[], linkPath: string) => (
+  const renderHoverMenu = (title: string, services: { category: string; route: string; items: { name: string; route: string }[] }[], linkPath: string) => (
     <HoverCard openDelay={0} closeDelay={100}>
       <HoverCardTrigger className="hover:text-cyan-400 transition-colors flex items-center space-x-1 bg-transparent border-none text-white text-sm cursor-pointer px-3 py-2 rounded-md hover:bg-slate-600/50">
         <span>{title}</span>
@@ -398,20 +424,20 @@ const Header = () => {
           <div className="grid grid-cols-3 gap-6">
             {services.map((service, index) => (
               <div key={index} className="space-y-3">
-                <Link to={linkPath} className="block">
+                <Link to={service.route} className="block">
                   <h4 className="text-slate-800 font-semibold text-base mb-3 text-blue-700 border-b border-blue-100 pb-2 hover:text-blue-900 transition-colors">
                     {service.category}
                   </h4>
                 </Link>
                 <div className="space-y-1">
                   {service.items.map((item, itemIndex) => (
-                    <button
+                    <Link
                       key={itemIndex}
-                      onClick={() => window.open('https://calendar.app.google/eSJeS2KsEsS5sbri8', '_blank')}
+                      to={item.route}
                       className="block w-full text-slate-600 hover:text-blue-700 hover:bg-blue-50 text-left text-sm py-2 px-3 rounded-md transition-all duration-200 hover:translate-x-1"
                     >
-                      {item}
-                    </button>
+                      {item.name}
+                    </Link>
                   ))}
                 </div>
               </div>
