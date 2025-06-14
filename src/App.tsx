@@ -73,6 +73,11 @@ import Microdiscectomy from "./pages/Microdiscectomy";
 import SpinalStenosisSurgery from "./pages/SpinalStenosisSurgery";
 import EndoscopicSpineSurgery from "./pages/EndoscopicSpineSurgery";
 import PercutaneousProcedures from "./pages/PercutaneousProcedures";
+import ACLInjuries from "./pages/ACLInjuries";
+import MeniscusTears from "./pages/MeniscusTears";
+import ShoulderDislocations from "./pages/ShoulderDislocations";
+import AnkleSprains from "./pages/AnkleSprains";
+import ReturnToSportPrograms from "./pages/ReturnToSportPrograms";
 
 const queryClient = new QueryClient();
 
@@ -160,6 +165,13 @@ const App = () => (
           <Route path="/cervical-spine-procedures" element={<CervicalSpineProcedures />} />
           <Route path="/lumbar-spine-procedures" element={<LumbarSpineProcedures />} />
           <Route path="/minimally-invasive-spine-procedures" element={<MinimallyInvasiveSpineProcedures />} />
+          
+          {/* Sports Medicine Procedures */}
+          <Route path="/acl-injuries" element={<ACLInjuries />} />
+          <Route path="/meniscus-tears" element={<MeniscusTears />} />
+          <Route path="/shoulder-dislocations" element={<ShoulderDislocations />} />
+          <Route path="/ankle-sprains" element={<AnkleSprains />} />
+          <Route path="/return-to-sport-programs" element={<ReturnToSportPrograms />} />
           
           {/* Sports Medicine Category Pages */}
           <Route path="/athletic-injuries-procedures" element={<AthleticInjuriesProcedures />} />

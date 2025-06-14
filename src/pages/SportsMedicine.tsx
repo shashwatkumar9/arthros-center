@@ -127,7 +127,7 @@ const SportsMedicine = () => {
           <div className="mb-12">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-3xl font-bold text-white">Athletic Injury Treatment</h2>
-              <Link to="/athletic-injury-treatment">
+              <Link to="/athletic-injuries-procedures">
                 <Button variant="outline" className="border-cyan-600 text-cyan-400 hover:bg-cyan-600 hover:text-white">
                   View All Injury Treatments
                 </Button>
@@ -164,7 +164,7 @@ const SportsMedicine = () => {
           <div className="mb-12">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-3xl font-bold text-white">Performance Optimization</h2>
-              <Link to="/performance-optimization">
+              <Link to="/performance-procedures">
                 <Button variant="outline" className="border-cyan-600 text-cyan-400 hover:bg-cyan-600 hover:text-white">
                   View All Performance Services
                 </Button>
@@ -201,7 +201,7 @@ const SportsMedicine = () => {
           <div className="mb-12">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-3xl font-bold text-white">Specialized Sports Medicine Care</h2>
-              <Link to="/specialized-sports-care">
+              <Link to="/specialized-care-procedures">
                 <Button variant="outline" className="border-cyan-600 text-cyan-400 hover:bg-cyan-600 hover:text-white">
                   View All Specialized Services
                 </Button>

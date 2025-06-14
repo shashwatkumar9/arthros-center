@@ -133,9 +133,34 @@ const Header = () => {
   ];
 
   const sportsServices = [
-    { category: "Athletic Injuries", items: ["ACL Injuries", "Meniscus Tears", "Shoulder Dislocations", "Ankle Sprains"] },
-    { category: "Performance", items: ["Return to Sport Programs", "Injury Prevention", "Sports Physicals"] },
-    { category: "Specialized Care", items: ["Concussion Management", "Overuse Injuries", "Youth Sports Medicine"] }
+    { 
+      category: "Athletic Injuries", 
+      route: "/athletic-injuries-procedures",
+      items: [
+        { name: "ACL Injuries", route: "/acl-injuries" },
+        { name: "Meniscus Tears", route: "/meniscus-tears" },
+        { name: "Shoulder Dislocations", route: "/shoulder-dislocations" },
+        { name: "Ankle Sprains", route: "/ankle-sprains" }
+      ]
+    },
+    { 
+      category: "Performance", 
+      route: "/performance-procedures",
+      items: [
+        { name: "Return to Sport Programs", route: "/return-to-sport-programs" },
+        { name: "Injury Prevention", route: "/injury-prevention" },
+        { name: "Sports Physicals", route: "/sports-physicals" }
+      ]
+    },
+    { 
+      category: "Specialized Care", 
+      route: "/specialized-care-procedures",
+      items: [
+        { name: "Concussion Management", route: "/concussion-management" },
+        { name: "Overuse Injuries", route: "/overuse-injuries" },
+        { name: "Youth Sports Medicine", route: "/youth-sports-medicine" }
+      ]
+    }
   ];
 
   const handServices = [
@@ -319,6 +344,45 @@ const Header = () => {
     </HoverCard>
   );
 
+  const renderSportsHoverMenu = (title: string, services: typeof sportsServices, linkPath: string) => (
+    <HoverCard openDelay={0} closeDelay={100}>
+      <HoverCardTrigger className="hover:text-cyan-400 transition-colors flex items-center space-x-1 bg-transparent border-none text-white text-sm cursor-pointer px-3 py-2 rounded-md hover:bg-slate-600/50">
+        <span>{title}</span>
+        <span className="text-xs">▼</span>
+      </HoverCardTrigger>
+      <HoverCardContent className="w-[800px] bg-white border border-gray-200 shadow-2xl z-50 p-0 rounded-lg overflow-hidden">
+        <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white p-4">
+          <h3 className="font-bold text-lg">{title}</h3>
+          <p className="text-blue-100 text-sm">{getDescription(title)}</p>
+        </div>
+        <div className="p-6">
+          <div className="grid grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <div key={index} className="space-y-3">
+                <Link to={service.route} className="block">
+                  <h4 className="text-slate-800 font-semibold text-base mb-3 text-blue-700 border-b border-blue-100 pb-2 hover:text-blue-900 transition-colors">
+                    {service.category}
+                  </h4>
+                </Link>
+                <div className="space-y-1">
+                  {service.items.map((item, itemIndex) => (
+                    <Link
+                      key={itemIndex}
+                      to={item.route}
+                      className="block w-full text-slate-600 hover:text-blue-700 hover:bg-blue-50 text-left text-sm py-2 px-3 rounded-md transition-all duration-200 hover:translate-x-1"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </HoverCardContent>
+    </HoverCard>
+  );
+
   const renderHoverMenu = (title: string, services: { category: string; items: string[] }[], linkPath: string) => (
     <HoverCard openDelay={0} closeDelay={100}>
       <HoverCardTrigger className="hover:text-cyan-400 transition-colors flex items-center space-x-1 bg-transparent border-none text-white text-sm cursor-pointer px-3 py-2 rounded-md hover:bg-slate-600/50">
@@ -428,7 +492,7 @@ const Header = () => {
               {renderSpineHoverMenu("Spine", spineServices, "/spine")}
             </Link>
             <Link to="/sports-medicine" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
-              {renderHoverMenu("Sports Medicine", sportsServices, "/sports-medicine")}
+              {renderSportsHoverMenu("Sports Medicine", sportsServices, "/sports-medicine")}
             </Link>
             <Link to="/hand-wrist" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
               {renderHoverMenu("Hand & Wrist", handServices, "/hand-wrist")}
