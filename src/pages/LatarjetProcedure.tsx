@@ -71,7 +71,7 @@ const LatarjetProcedure = () => {
                 <h3 className="text-xl font-semibold text-cyan-400 mb-4">Primary Indications</h3>
                 <ul className="text-slate-300 space-y-2">
                   <li>• Recurrent anterior shoulder instability</li>
-                  <li>• Significant glenoid bone loss (>20%)</li>
+                  <li>• Significant glenoid bone loss (&gt;20%)</li>
                   <li>• Failed arthroscopic Bankart repair</li>
                   <li>• Contact athletes with instability</li>
                   <li>• Bipolar bone loss (Hill-Sachs + glenoid)</li>

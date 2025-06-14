@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Search } from "lucide-react";
 import { useNavigate } from "react-router-dom";
@@ -48,9 +47,9 @@ const SearchCommand = () => {
     { category: "Shoulder & Elbow", title: "Latarjet Procedure", route: "/latarjet-procedure" },
     { category: "Shoulder & Elbow", title: "SLAP Repair", route: "/slap-repair" },
     { category: "Shoulder & Elbow", title: "Tennis Elbow Surgery", route: "/tennis-elbow-surgery" },
-    { category: "Shoulder & Elbow", title: "Golfer's Elbow Treatment", route: "/shoulder-elbow" },
-    { category: "Shoulder & Elbow", title: "Elbow Arthroscopy", route: "/shoulder-elbow" },
-    { category: "Shoulder & Elbow", title: "UCL Reconstruction", route: "/shoulder-elbow" },
+    { category: "Shoulder & Elbow", title: "Golfer's Elbow Treatment", route: "/golfers-elbow-treatment" },
+    { category: "Shoulder & Elbow", title: "Elbow Arthroscopy", route: "/elbow-arthroscopy" },
+    { category: "Shoulder & Elbow", title: "UCL Reconstruction", route: "/ucl-reconstruction" },
 
     // Hip & Pelvis
     { category: "Hip & Pelvis", title: "Total Hip Replacement", route: "/hip-pelvis" },

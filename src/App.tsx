@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -34,6 +35,9 @@ import BankartRepair from "./pages/BankartRepair";
 import LatarjetProcedure from "./pages/LatarjetProcedure";
 import SLAPRepair from "./pages/SLAPRepair";
 import TennisElbowSurgery from "./pages/TennisElbowSurgery";
+import GolfersElbowTreatment from "./pages/GolfersElbowTreatment";
+import ElbowArthroscopy from "./pages/ElbowArthroscopy";
+import UCLReconstruction from "./pages/UCLReconstruction";
 
 const queryClient = new QueryClient();
 
@@ -82,6 +86,9 @@ const App = () => (
           <Route path="/latarjet-procedure" element={<LatarjetProcedure />} />
           <Route path="/slap-repair" element={<SLAPRepair />} />
           <Route path="/tennis-elbow-surgery" element={<TennisElbowSurgery />} />
+          <Route path="/golfers-elbow-treatment" element={<GolfersElbowTreatment />} />
+          <Route path="/elbow-arthroscopy" element={<ElbowArthroscopy />} />
+          <Route path="/ucl-reconstruction" element={<UCLReconstruction />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />

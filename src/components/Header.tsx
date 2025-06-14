@@ -63,9 +63,9 @@ const Header = () => {
       category: "Elbow Procedures", 
       items: [
         { name: "Tennis Elbow Surgery", route: "/tennis-elbow-surgery" },
-        { name: "Golfer's Elbow Treatment", route: "/shoulder-elbow" },
-        { name: "Elbow Arthroscopy", route: "/shoulder-elbow" },
-        { name: "UCL Reconstruction", route: "/shoulder-elbow" }
+        { name: "Golfer's Elbow Treatment", route: "/golfers-elbow-treatment" },
+        { name: "Elbow Arthroscopy", route: "/elbow-arthroscopy" },
+        { name: "UCL Reconstruction", route: "/ucl-reconstruction" }
       ]
     }
   ];

@@ -83,7 +83,7 @@ const SLAPRepair = () => {
                   Transfer of biceps tendon to humeral head with labrum debridement.
                 </p>
                 <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• Older patients (>40 years)</li>
+                  <li>• Older patients (&gt;40 years)</li>
                   <li>• Failed SLAP repair</li>
                   <li>• Degenerative tears</li>
                 </ul>
