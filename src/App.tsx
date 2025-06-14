@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -55,6 +56,14 @@ import NerveSurgeryProcedures from "./pages/NerveSurgeryProcedures";
 import FootSurgeryProcedures from "./pages/FootSurgeryProcedures";
 import AnkleSurgeryProcedures from "./pages/AnkleSurgeryProcedures";
 import SportsInjuriesProcedures from "./pages/SportsInjuriesProcedures";
+import TotalHipReplacement from "./pages/TotalHipReplacement";
+import HipResurfacing from "./pages/HipResurfacing";
+import RevisionHipSurgery from "./pages/RevisionHipSurgery";
+import FAISurgery from "./pages/FAISurgery";
+import LabralRepair from "./pages/LabralRepair";
+import HipImpingementTreatment from "./pages/HipImpingementTreatment";
+import PelvicFractureRepair from "./pages/PelvicFractureRepair";
+import SacroiliacJointTreatment from "./pages/SacroiliacJointTreatment";
 
 const queryClient = new QueryClient();
 
@@ -111,6 +120,16 @@ const App = () => (
           <Route path="/rotator-cuff-procedures" element={<RotatorCuffProcedures />} />
           <Route path="/shoulder-instability-procedures" element={<ShoulderInstabilityProcedures />} />
           <Route path="/elbow-procedures" element={<ElbowProcedures />} />
+          
+          {/* Hip & Pelvis Procedures */}
+          <Route path="/total-hip-replacement" element={<TotalHipReplacement />} />
+          <Route path="/hip-resurfacing" element={<HipResurfacing />} />
+          <Route path="/revision-hip-surgery" element={<RevisionHipSurgery />} />
+          <Route path="/fai-surgery" element={<FAISurgery />} />
+          <Route path="/labral-repair" element={<LabralRepair />} />
+          <Route path="/hip-impingement-treatment" element={<HipImpingementTreatment />} />
+          <Route path="/pelvic-fracture-repair" element={<PelvicFractureRepair />} />
+          <Route path="/sacroiliac-joint-treatment" element={<SacroiliacJointTreatment />} />
           
           {/* Hip & Pelvis Category Pages */}
           <Route path="/hip-replacement-procedures" element={<HipReplacementProcedures />} />

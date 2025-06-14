@@ -3,28 +3,32 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const HipReplacementProcedures = () => {
   const procedures = [
     {
       title: "Total Hip Replacement",
-      description: "Complete hip joint replacement using advanced implants for optimal mobility and pain relief",
+      description: "Complete hip joint replacement with modern implants for lasting pain relief and mobility",
+      route: "/total-hip-replacement"
     },
     {
       title: "Hip Resurfacing", 
-      description: "Conservative hip treatment preserving bone while resurfacing damaged joint surfaces",
+      description: "Bone-conserving alternative to total hip replacement for younger, active patients",
+      route: "/hip-resurfacing"
     },
     {
       title: "Revision Hip Surgery",
-      description: "Complex revision procedures for failed hip replacements using specialized techniques",
+      description: "Complex revision surgery for failed hip replacements using specialized techniques",
+      route: "/revision-hip-surgery"
     }
   ];
 
   return (
     <>
-      <title>Hip Replacement Surgery in Patna | Total Hip Replacement India | Dr. Gurudeo Kumar</title>
+      <title>Hip Replacement Surgery in Patna | Hip Replacement Procedures India | Dr. Gurudeo Kumar</title>
       <meta name="description" content="Expert hip replacement surgery in Patna by Dr. Gurudeo Kumar. Total hip replacement, hip resurfacing, revision surgery. Serving Bengal, North East, Nepal." />
-      <meta name="keywords" content="hip replacement surgery Patna, total hip replacement India, hip resurfacing Patna, revision hip surgery, Dr Gurudeo Kumar hip" />
+      <meta name="keywords" content="hip replacement surgery Patna, total hip replacement India, hip resurfacing, Dr Gurudeo Kumar hip" />
       
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
         <Header />
@@ -32,10 +36,10 @@ const HipReplacementProcedures = () => {
         <div className="container mx-auto px-4 py-12">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Hip Replacement Surgery in <span className="text-cyan-400">Patna, India</span>
+              Hip Replacement Procedures in <span className="text-cyan-400">Patna, India</span>
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-              Advanced hip replacement procedures by Dr. Gurudeo Kumar. Expert total hip replacement, resurfacing, and revision surgery for optimal mobility and pain relief.
+              Advanced hip replacement procedures by Dr. Gurudeo Kumar. From total hip replacement to complex revisions using latest implants and techniques.
             </p>
             <Button 
               className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-3 text-lg"
@@ -63,27 +67,28 @@ const HipReplacementProcedures = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow flex flex-col justify-end">
-                  <Button 
-                    variant="outline" 
-                    className="w-full border-cyan-600 text-cyan-400 hover:bg-cyan-600 hover:text-white"
-                    onClick={() => window.open('https://calendar.app.google/eSJeS2KsEsS5sbri8', '_blank')}
-                  >
-                    Schedule Consultation
-                  </Button>
+                  <Link to={procedure.route}>
+                    <Button 
+                      variant="outline" 
+                      className="w-full border-cyan-600 text-cyan-400 hover:bg-cyan-600 hover:text-white"
+                    >
+                      Learn More
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
           </div>
 
           <div className="bg-slate-800/30 rounded-lg p-8 mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">Advanced Hip Replacement at Arthros Center</h2>
+            <h2 className="text-3xl font-bold text-white mb-6">Expert Hip Replacement at Arthros Center</h2>
             <div className="prose prose-lg max-w-none text-slate-300 mb-8">
               <p className="text-lg leading-relaxed mb-6">
-                Hip replacement surgery has revolutionized the treatment of severe hip arthritis and joint damage, providing patients with restored mobility, reduced pain, and improved quality of life. At Arthros Center in Patna, Dr. Gurudeo Kumar specializes in comprehensive hip replacement procedures, offering the latest techniques and implant technologies for patients from across India, Bengal, North East regions, and Nepal.
+                Hip replacement surgery has revolutionized the treatment of severe hip arthritis and injury, providing patients with dramatic pain relief and restored mobility. At Arthros Center in Patna, Dr. Gurudeo Kumar performs advanced hip replacement procedures using the latest surgical techniques and modern implant technology, serving patients from across India, Bengal, North East regions, and Nepal.
               </p>
               
               <p className="text-lg leading-relaxed mb-6">
-                Our hip replacement program encompasses the full spectrum of procedures, from primary total hip replacements to complex revision surgeries. Dr. Gurudeo Kumar employs minimally invasive surgical approaches when appropriate, advanced implant materials including ceramic and highly cross-linked polyethylene, and computer-assisted surgical techniques for precise implant positioning and optimal outcomes.
+                Our comprehensive hip replacement program includes detailed pre-operative planning, personalized surgical approach selection, and structured rehabilitation protocols. Whether you need a primary total hip replacement, bone-conserving hip resurfacing, or complex revision surgery, our center delivers world-class outcomes with the convenience of local accessibility in Eastern India.
               </p>
             </div>
 
@@ -91,25 +96,25 @@ const HipReplacementProcedures = () => {
               <div>
                 <h3 className="text-xl font-semibold text-cyan-400 mb-4">Modern Implants</h3>
                 <p className="text-slate-300">
-                  Latest generation hip implants with superior longevity and biocompatibility for optimal long-term results.
+                  Latest generation hip implants with proven long-term durability and excellent biocompatibility for lasting results.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-cyan-400 mb-4">Minimally Invasive</h3>
+                <h3 className="text-xl font-semibold text-cyan-400 mb-4">Minimally Invasive Techniques</h3>
                 <p className="text-slate-300">
-                  Advanced surgical techniques with smaller incisions for faster recovery and reduced surgical trauma.
+                  Advanced surgical approaches that minimize tissue damage and accelerate recovery time.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-cyan-400 mb-4">Revision Expertise</h3>
+                <h3 className="text-xl font-semibold text-cyan-400 mb-4">Complex Revisions</h3>
                 <p className="text-slate-300">
-                  Specialized experience in complex revision surgeries for failed hip replacements and complications.
+                  Specialized expertise in challenging revision cases with bone defects and failed implants.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-cyan-400 mb-4">Regional Excellence</h3>
+                <h3 className="text-xl font-semibold text-cyan-400 mb-4">Rapid Recovery</h3>
                 <p className="text-slate-300">
-                  Premier hip replacement center serving Patna, Bengal, North East India, and Nepal with expert outcomes.
+                  Enhanced recovery protocols for faster return to daily activities and improved quality of life.
                 </p>
               </div>
             </div>

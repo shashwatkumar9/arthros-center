@@ -3,28 +3,32 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Link } from "react-router-dom";
 
 const HipArthroscopyProcedures = () => {
   const procedures = [
     {
       title: "FAI Surgery",
-      description: "Femoroacetabular impingement surgery to restore normal hip mechanics and prevent arthritis",
+      description: "Femoroacetabular impingement treatment via advanced arthroscopic techniques",
+      route: "/fai-surgery"
     },
     {
       title: "Labral Repair", 
-      description: "Arthroscopic repair of torn hip labrum to restore joint stability and function",
+      description: "Minimally invasive hip labral tear repair to restore joint stability",
+      route: "/labral-repair"
     },
     {
       title: "Hip Impingement Treatment",
-      description: "Comprehensive treatment for hip impingement syndromes using minimally invasive techniques",
+      description: "Comprehensive treatment for hip impingement syndrome and related conditions",
+      route: "/hip-impingement-treatment"
     }
   ];
 
   return (
     <>
-      <title>Hip Arthroscopy Surgery in Patna | FAI Surgery India | Dr. Gurudeo Kumar</title>
-      <meta name="description" content="Expert hip arthroscopy in Patna by Dr. Gurudeo Kumar. FAI surgery, labral repair, hip impingement treatment. Serving Bengal, North East, Nepal." />
-      <meta name="keywords" content="hip arthroscopy Patna, FAI surgery India, labral repair Patna, hip impingement treatment, Dr Gurudeo Kumar hip" />
+      <title>Hip Arthroscopy Surgery in Patna | Hip Arthroscopy Procedures India | Dr. Gurudeo Kumar</title>
+      <meta name="description" content="Expert hip arthroscopy surgery in Patna by Dr. Gurudeo Kumar. FAI surgery, labral repair, hip impingement treatment. Serving Bengal, North East, Nepal." />
+      <meta name="keywords" content="hip arthroscopy surgery Patna, FAI surgery India, labral repair, Dr Gurudeo Kumar hip arthroscopy" />
       
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
         <Header />
@@ -32,10 +36,10 @@ const HipArthroscopyProcedures = () => {
         <div className="container mx-auto px-4 py-12">
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-              Hip Arthroscopy Surgery in <span className="text-cyan-400">Patna, India</span>
+              Hip Arthroscopy Procedures in <span className="text-cyan-400">Patna, India</span>
             </h1>
             <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-              Advanced hip arthroscopy procedures by Dr. Gurudeo Kumar. Minimally invasive FAI surgery, labral repair, and hip impingement treatment for young active patients.
+              Advanced hip arthroscopy procedures by Dr. Gurudeo Kumar. Minimally invasive treatment for young, active patients with hip problems.
             </p>
             <Button 
               className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-3 text-lg"
@@ -63,27 +67,28 @@ const HipArthroscopyProcedures = () => {
                   </CardDescription>
                 </CardHeader>
                 <CardContent className="flex-grow flex flex-col justify-end">
-                  <Button 
-                    variant="outline" 
-                    className="w-full border-cyan-600 text-cyan-400 hover:bg-cyan-600 hover:text-white"
-                    onClick={() => window.open('https://calendar.app.google/eSJeS2KsEsS5sbri8', '_blank')}
-                  >
-                    Schedule Consultation
-                  </Button>
+                  <Link to={procedure.route}>
+                    <Button 
+                      variant="outline" 
+                      className="w-full border-cyan-600 text-cyan-400 hover:bg-cyan-600 hover:text-white"
+                    >
+                      Learn More
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             ))}
           </div>
 
           <div className="bg-slate-800/30 rounded-lg p-8 mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">Expert Hip Arthroscopy at Arthros Center</h2>
+            <h2 className="text-3xl font-bold text-white mb-6">Advanced Hip Arthroscopy at Arthros Center</h2>
             <div className="prose prose-lg max-w-none text-slate-300 mb-8">
               <p className="text-lg leading-relaxed mb-6">
-                Hip arthroscopy represents one of the most significant advances in orthopedic surgery, allowing surgeons to diagnose and treat hip conditions through small incisions using specialized cameras and instruments. At Arthros Center in Patna, Dr. Gurudeo Kumar specializes in advanced hip arthroscopic procedures, providing minimally invasive treatment options for young active patients from across India, Bengal, North East regions, and Nepal.
+                Hip arthroscopy represents a revolutionary advancement in hip surgery, allowing for minimally invasive treatment of various hip conditions that previously required large open procedures. At Arthros Center in Patna, Dr. Gurudeo Kumar specializes in advanced arthroscopic techniques to treat hip impingement, labral tears, and other conditions in young, active patients from across India, Bengal, North East regions, and Nepal.
               </p>
               
               <p className="text-lg leading-relaxed mb-6">
-                Our hip arthroscopy program focuses on treating femoroacetabular impingement (FAI), labral tears, and other intra-articular hip pathology that can lead to early arthritis if left untreated. Dr. Gurudeo Kumar employs the latest arthroscopic techniques, specialized instruments, and advanced imaging to provide precise treatment while preserving healthy tissue and promoting faster recovery.
+                Using state-of-the-art arthroscopic equipment and specialized techniques, we can precisely address hip pathology through small incisions, resulting in faster recovery, less pain, and earlier return to activities. Our comprehensive approach includes thorough evaluation, advanced imaging, and personalized treatment plans to ensure optimal outcomes for each patient.
               </p>
             </div>
 
@@ -91,25 +96,25 @@ const HipArthroscopyProcedures = () => {
               <div>
                 <h3 className="text-xl font-semibold text-cyan-400 mb-4">Minimally Invasive</h3>
                 <p className="text-slate-300">
-                  Advanced arthroscopic techniques with small incisions for reduced pain and faster recovery times.
+                  Small incisions with specialized instruments for precise treatment with minimal tissue damage.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-cyan-400 mb-4">Young Adult Focus</h3>
+                <h3 className="text-xl font-semibold text-cyan-400 mb-4">Faster Recovery</h3>
                 <p className="text-slate-300">
-                  Specialized care for active young adults to prevent early arthritis and maintain hip function.
+                  Reduced recovery time compared to open surgery, allowing quicker return to sports and activities.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-cyan-400 mb-4">Advanced Imaging</h3>
+                <h3 className="text-xl font-semibold text-cyan-400 mb-4">Young Athlete Focus</h3>
                 <p className="text-slate-300">
-                  State-of-the-art imaging and navigation systems for precise diagnosis and surgical planning.
+                  Specialized care for young, active patients wanting to maintain high activity levels.
                 </p>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-cyan-400 mb-4">Regional Expertise</h3>
+                <h3 className="text-xl font-semibold text-cyan-400 mb-4">Advanced Technology</h3>
                 <p className="text-slate-300">
-                  Leading hip arthroscopy center serving Patna, Bengal, North East India, and Nepal with expert care.
+                  High-definition arthroscopic systems for superior visualization and precision treatment.
                 </p>
               </div>
             </div>
