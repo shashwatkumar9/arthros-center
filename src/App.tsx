@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -98,6 +99,11 @@ import HammertoeCorrection from "./pages/HammertoeCorrection";
 import PlantarFasciitisSurgery from "./pages/PlantarFasciitisSurgery";
 import AchillesRepair from "./pages/AchillesRepair";
 import AnkleArthroscopy from "./pages/AnkleArthroscopy";
+import AnkleReplacement from "./pages/AnkleReplacement";
+import AnkleFusion from "./pages/AnkleFusion";
+import AnkleLigamentReconstruction from "./pages/AnkleLigamentReconstruction";
+import JonesFracture from "./pages/JonesFracture";
+import TurfToeTreatment from "./pages/TurfToeTreatment";
 
 const queryClient = new QueryClient();
 
@@ -232,6 +238,11 @@ const App = () => (
           <Route path="/plantar-fasciitis-surgery" element={<PlantarFasciitisSurgery />} />
           <Route path="/achilles-repair" element={<AchillesRepair />} />
           <Route path="/ankle-arthroscopy" element={<AnkleArthroscopy />} />
+          <Route path="/ankle-replacement" element={<AnkleReplacement />} />
+          <Route path="/ankle-fusion" element={<AnkleFusion />} />
+          <Route path="/ankle-ligament-reconstruction" element={<AnkleLigamentReconstruction />} />
+          <Route path="/jones-fracture" element={<JonesFracture />} />
+          <Route path="/turf-toe-treatment" element={<TurfToeTreatment />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
