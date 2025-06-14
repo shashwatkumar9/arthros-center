@@ -57,30 +57,32 @@ const Header = () => {
         <span>{title}</span>
         <span className="text-xs">▼</span>
       </HoverCardTrigger>
-      <HoverCardContent className="w-96 bg-white border border-gray-200 shadow-2xl z-50 p-0 rounded-lg overflow-hidden">
+      <HoverCardContent className="w-[600px] bg-white border border-gray-200 shadow-2xl z-50 p-0 rounded-lg overflow-hidden">
         <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white p-4">
           <h3 className="font-bold text-lg">{title}</h3>
           <p className="text-blue-100 text-sm">Specialized procedures and treatments</p>
         </div>
-        <div className="p-4 max-h-80 overflow-y-auto">
-          {services.map((service, index) => (
-            <div key={index} className="mb-4 last:mb-0">
-              <h4 className="text-slate-800 font-semibold text-sm mb-2 text-blue-700 border-b border-blue-100 pb-1">
-                {service.category}
-              </h4>
-              <div className="grid gap-1">
-                {service.items.map((item, itemIndex) => (
-                  <button
-                    key={itemIndex}
-                    className="text-slate-600 hover:text-blue-700 hover:bg-blue-50 text-left text-sm py-2 px-3 rounded-md transition-all duration-200 hover:translate-x-1"
-                    onClick={() => console.log(`Selected: ${item}`)}
-                  >
-                    {item}
-                  </button>
-                ))}
+        <div className="p-6 max-h-96 overflow-y-auto">
+          <div className="grid grid-cols-2 gap-8">
+            {services.map((service, index) => (
+              <div key={index} className="space-y-3">
+                <h4 className="text-slate-800 font-semibold text-base mb-3 text-blue-700 border-b border-blue-100 pb-2">
+                  {service.category}
+                </h4>
+                <div className="space-y-1">
+                  {service.items.map((item, itemIndex) => (
+                    <button
+                      key={itemIndex}
+                      className="block w-full text-slate-600 hover:text-blue-700 hover:bg-blue-50 text-left text-sm py-2 px-3 rounded-md transition-all duration-200 hover:translate-x-1"
+                      onClick={() => console.log(`Selected: ${item}`)}
+                    >
+                      {item}
+                    </button>
+                  ))}
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </HoverCardContent>
     </HoverCard>
