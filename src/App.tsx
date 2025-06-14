@@ -64,6 +64,15 @@ import LabralRepair from "./pages/LabralRepair";
 import HipImpingementTreatment from "./pages/HipImpingementTreatment";
 import PelvicFractureRepair from "./pages/PelvicFractureRepair";
 import SacroiliacJointTreatment from "./pages/SacroiliacJointTreatment";
+import CervicalDiscReplacement from "./pages/CervicalDiscReplacement";
+import CervicalFusion from "./pages/CervicalFusion";
+import CervicalLaminectomy from "./pages/CervicalLaminectomy";
+import LumbarFusion from "./pages/LumbarFusion";
+import DiscReplacement from "./pages/DiscReplacement";
+import Microdiscectomy from "./pages/Microdiscectomy";
+import SpinalStenosisSurgery from "./pages/SpinalStenosisSurgery";
+import EndoscopicSpineSurgery from "./pages/EndoscopicSpineSurgery";
+import PercutaneousProcedures from "./pages/PercutaneousProcedures";
 
 const queryClient = new QueryClient();
 
@@ -135,6 +144,17 @@ const App = () => (
           <Route path="/hip-replacement-procedures" element={<HipReplacementProcedures />} />
           <Route path="/hip-arthroscopy-procedures" element={<HipArthroscopyProcedures />} />
           <Route path="/pelvis-procedures" element={<PelvisProcedures />} />
+          
+          {/* Spine Procedures */}
+          <Route path="/cervical-disc-replacement" element={<CervicalDiscReplacement />} />
+          <Route path="/cervical-fusion" element={<CervicalFusion />} />
+          <Route path="/cervical-laminectomy" element={<CervicalLaminectomy />} />
+          <Route path="/lumbar-fusion" element={<LumbarFusion />} />
+          <Route path="/disc-replacement" element={<DiscReplacement />} />
+          <Route path="/microdiscectomy" element={<Microdiscectomy />} />
+          <Route path="/spinal-stenosis-surgery" element={<SpinalStenosisSurgery />} />
+          <Route path="/endoscopic-spine-surgery" element={<EndoscopicSpineSurgery />} />
+          <Route path="/percutaneous-procedures" element={<PercutaneousProcedures />} />
           
           {/* Spine Category Pages */}
           <Route path="/cervical-spine-procedures" element={<CervicalSpineProcedures />} />

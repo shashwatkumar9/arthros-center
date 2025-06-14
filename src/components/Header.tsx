@@ -103,9 +103,33 @@ const Header = () => {
   ];
 
   const spineServices = [
-    { category: "Cervical Spine", items: ["Cervical Disc Replacement", "Cervical Fusion", "Cervical Laminectomy"] },
-    { category: "Lumbar Spine", items: ["Lumbar Fusion", "Disc Replacement", "Microdiscectomy", "Spinal Stenosis Surgery"] },
-    { category: "Minimally Invasive", items: ["Endoscopic Spine Surgery", "Percutaneous Procedures"] }
+    { 
+      category: "Cervical Spine", 
+      route: "/cervical-spine-procedures",
+      items: [
+        { name: "Cervical Disc Replacement", route: "/cervical-disc-replacement" },
+        { name: "Cervical Fusion", route: "/cervical-fusion" },
+        { name: "Cervical Laminectomy", route: "/cervical-laminectomy" }
+      ]
+    },
+    { 
+      category: "Lumbar Spine", 
+      route: "/lumbar-spine-procedures",
+      items: [
+        { name: "Lumbar Fusion", route: "/lumbar-fusion" },
+        { name: "Disc Replacement", route: "/disc-replacement" },
+        { name: "Microdiscectomy", route: "/microdiscectomy" },
+        { name: "Spinal Stenosis Surgery", route: "/spinal-stenosis-surgery" }
+      ]
+    },
+    { 
+      category: "Minimally Invasive", 
+      route: "/minimally-invasive-spine-procedures",
+      items: [
+        { name: "Endoscopic Spine Surgery", route: "/endoscopic-spine-surgery" },
+        { name: "Percutaneous Procedures", route: "/percutaneous-procedures" }
+      ]
+    }
   ];
 
   const sportsServices = [
@@ -256,6 +280,45 @@ const Header = () => {
     </HoverCard>
   );
 
+  const renderSpineHoverMenu = (title: string, services: typeof spineServices, linkPath: string) => (
+    <HoverCard openDelay={0} closeDelay={100}>
+      <HoverCardTrigger className="hover:text-cyan-400 transition-colors flex items-center space-x-1 bg-transparent border-none text-white text-sm cursor-pointer px-3 py-2 rounded-md hover:bg-slate-600/50">
+        <span>{title}</span>
+        <span className="text-xs">▼</span>
+      </HoverCardTrigger>
+      <HoverCardContent className="w-[800px] bg-white border border-gray-200 shadow-2xl z-50 p-0 rounded-lg overflow-hidden">
+        <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white p-4">
+          <h3 className="font-bold text-lg">{title}</h3>
+          <p className="text-blue-100 text-sm">{getDescription(title)}</p>
+        </div>
+        <div className="p-6">
+          <div className="grid grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <div key={index} className="space-y-3">
+                <Link to={service.route} className="block">
+                  <h4 className="text-slate-800 font-semibold text-base mb-3 text-blue-700 border-b border-blue-100 pb-2 hover:text-blue-900 transition-colors">
+                    {service.category}
+                  </h4>
+                </Link>
+                <div className="space-y-1">
+                  {service.items.map((item, itemIndex) => (
+                    <Link
+                      key={itemIndex}
+                      to={item.route}
+                      className="block w-full text-slate-600 hover:text-blue-700 hover:bg-blue-50 text-left text-sm py-2 px-3 rounded-md transition-all duration-200 hover:translate-x-1"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </HoverCardContent>
+    </HoverCard>
+  );
+
   const renderHoverMenu = (title: string, services: { category: string; items: string[] }[], linkPath: string) => (
     <HoverCard openDelay={0} closeDelay={100}>
       <HoverCardTrigger className="hover:text-cyan-400 transition-colors flex items-center space-x-1 bg-transparent border-none text-white text-sm cursor-pointer px-3 py-2 rounded-md hover:bg-slate-600/50">
@@ -362,7 +425,7 @@ const Header = () => {
               {renderHipHoverMenu("Hip & Pelvis", hipServices, "/hip-pelvis")}
             </Link>
             <Link to="/spine" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
-              {renderHoverMenu("Spine", spineServices, "/spine")}
+              {renderSpineHoverMenu("Spine", spineServices, "/spine")}
             </Link>
             <Link to="/sports-medicine" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
               {renderHoverMenu("Sports Medicine", sportsServices, "/sports-medicine")}
