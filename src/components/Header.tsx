@@ -1,5 +1,5 @@
 
-import { Search, Phone, Mail } from "lucide-react";
+import { Search, Phone, Mail, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -51,6 +51,19 @@ const Header = () => {
     { category: "Sports Injuries", items: ["Ankle Sprains", "Jones Fracture", "Turf Toe Treatment"] }
   ];
 
+  const getDescription = (title: string) => {
+    const descriptions = {
+      "Knee Surgeries": "Advanced knee procedures for optimal mobility and function",
+      "Shoulder & Elbow": "Comprehensive shoulder and elbow reconstruction services", 
+      "Hip & Pelvis": "Modern hip replacement and arthroscopic solutions",
+      "Spine": "Minimally invasive spine surgery and pain management",
+      "Sports Medicine": "Expert care for athletic injuries and performance optimization",
+      "Hand & Wrist": "Precision hand and wrist surgery for full functionality",
+      "Foot & Ankle": "Complete foot and ankle treatment for active lifestyles"
+    };
+    return descriptions[title] || "Specialized procedures and treatments";
+  };
+
   const renderHoverMenu = (title: string, services: { category: string; items: string[] }[]) => (
     <HoverCard openDelay={0} closeDelay={100}>
       <HoverCardTrigger className="hover:text-cyan-400 transition-colors flex items-center space-x-1 bg-transparent border-none text-white text-sm cursor-pointer px-3 py-2 rounded-md hover:bg-slate-600/50">
@@ -60,24 +73,29 @@ const Header = () => {
       <HoverCardContent className="w-[800px] bg-white border border-gray-200 shadow-2xl z-50 p-0 rounded-lg overflow-hidden">
         <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white p-4">
           <h3 className="font-bold text-lg">{title}</h3>
-          <p className="text-blue-100 text-sm">Specialized procedures and treatments</p>
+          <p className="text-blue-100 text-sm">{getDescription(title)}</p>
         </div>
         <div className="p-6">
           <div className="grid grid-cols-3 gap-6">
             {services.map((service, index) => (
               <div key={index} className="space-y-3">
-                <h4 className="text-slate-800 font-semibold text-base mb-3 text-blue-700 border-b border-blue-100 pb-2">
-                  {service.category}
-                </h4>
+                <a 
+                  href={`https://arthroscenter.com/${service.category.toLowerCase().replace(/\s+/g, '-').replace(/&/g, 'and')}`}
+                  className="block"
+                >
+                  <h4 className="text-slate-800 font-semibold text-base mb-3 text-blue-700 border-b border-blue-100 pb-2 hover:text-blue-900 transition-colors">
+                    {service.category}
+                  </h4>
+                </a>
                 <div className="space-y-1">
                   {service.items.map((item, itemIndex) => (
-                    <button
+                    <a
                       key={itemIndex}
+                      href={`https://arthroscenter.com/${item.toLowerCase().replace(/\s+/g, '-').replace(/'/g, '').replace(/&/g, 'and')}`}
                       className="block w-full text-slate-600 hover:text-blue-700 hover:bg-blue-50 text-left text-sm py-2 px-3 rounded-md transition-all duration-200 hover:translate-x-1"
-                      onClick={() => console.log(`Selected: ${item}`)}
                     >
                       {item}
-                    </button>
+                    </a>
                   ))}
                 </div>
               </div>
@@ -106,9 +124,10 @@ const Header = () => {
           </div>
           <div className="flex space-x-3">
             <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-white text-xs">f</div>
-            <div className="w-6 h-6 bg-blue-400 rounded flex items-center justify-center text-white text-xs">t</div>
             <div className="w-6 h-6 bg-pink-600 rounded flex items-center justify-center text-white text-xs">i</div>
-            <div className="w-6 h-6 bg-blue-700 rounded flex items-center justify-center text-white text-xs">in</div>
+            <div className="w-6 h-6 bg-red-600 rounded flex items-center justify-center text-white text-xs">
+              <Youtube className="w-3 h-3" />
+            </div>
           </div>
         </div>
       </div>
@@ -145,13 +164,27 @@ const Header = () => {
       <div className="bg-slate-700 text-white py-3 shadow-lg">
         <div className="container mx-auto px-4">
           <nav className="flex space-x-2 text-sm">
-            {renderHoverMenu("Knee Surgeries", kneeServices)}
-            {renderHoverMenu("Shoulder & Elbow", shoulderServices)}
-            {renderHoverMenu("Hip & Pelvis", hipServices)}
-            {renderHoverMenu("Spine", spineServices)}
-            {renderHoverMenu("Sports Medicine", sportsServices)}
-            {renderHoverMenu("Hand & Wrist", handServices)}
-            {renderHoverMenu("Foot & Ankle", footServices)}
+            <a href="https://arthroscenter.com/knee-surgeries" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
+              {renderHoverMenu("Knee Surgeries", kneeServices)}
+            </a>
+            <a href="https://arthroscenter.com/shoulder-elbow" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
+              {renderHoverMenu("Shoulder & Elbow", shoulderServices)}
+            </a>
+            <a href="https://arthroscenter.com/hip-pelvis" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
+              {renderHoverMenu("Hip & Pelvis", hipServices)}
+            </a>
+            <a href="https://arthroscenter.com/spine" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
+              {renderHoverMenu("Spine", spineServices)}
+            </a>
+            <a href="https://arthroscenter.com/sports-medicine" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
+              {renderHoverMenu("Sports Medicine", sportsServices)}
+            </a>
+            <a href="https://arthroscenter.com/hand-wrist" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
+              {renderHoverMenu("Hand & Wrist", handServices)}
+            </a>
+            <a href="https://arthroscenter.com/foot-ankle" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
+              {renderHoverMenu("Foot & Ankle", footServices)}
+            </a>
           </nav>
         </div>
       </div>
