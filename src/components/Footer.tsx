@@ -14,33 +14,33 @@ const Footer = () => {
   ];
 
   const popularProcedures = [
-    { name: "ACL Reconstruction", link: "/acl-reconstruction" },
-    { name: "Rotator Cuff Repair", link: "/rotator-cuff-repair" },
-    { name: "Total Hip Replacement", link: "/total-hip-replacement" },
-    { name: "Knee Replacement", link: "/knee-replacement" },
-    { name: "Meniscus Repair", link: "/meniscus-repair" },
-    { name: "Shoulder Arthroscopy", link: "/bankart-repair" },
-    { name: "Ankle Arthroscopy", link: "/ankle-arthroscopy" },
-    { name: "Carpal Tunnel Release", link: "/carpal-tunnel-release" },
-    { name: "Bunion Surgery", link: "/bunion-surgery" },
-    { name: "Achilles Repair", link: "/achilles-repair" },
-    { name: "Hip Arthroscopy", link: "/fai-surgery" },
-    { name: "Lumbar Fusion", link: "/lumbar-fusion" }
+    { name: "ACL Reconstruction in India", link: "/acl-reconstruction" },
+    { name: "Rotator Cuff Repair in India", link: "/rotator-cuff-repair" },
+    { name: "Total Hip Replacement in India", link: "/total-hip-replacement" },
+    { name: "Knee Replacement in India", link: "/knee-replacement" },
+    { name: "Meniscus Repair in India", link: "/meniscus-repair" },
+    { name: "Shoulder Arthroscopy in India", link: "/bankart-repair" },
+    { name: "Ankle Arthroscopy in India", link: "/ankle-arthroscopy" },
+    { name: "Carpal Tunnel Release in India", link: "/carpal-tunnel-release" },
+    { name: "Bunion Surgery in India", link: "/bunion-surgery" },
+    { name: "Achilles Repair in India", link: "/achilles-repair" },
+    { name: "Hip Arthroscopy in India", link: "/fai-surgery" },
+    { name: "Lumbar Fusion in India", link: "/lumbar-fusion" }
   ];
 
   const additionalProcedures = [
-    { name: "Tennis Elbow Surgery", link: "/tennis-elbow-surgery" },
-    { name: "Bankart Repair", link: "/bankart-repair" },
-    { name: "Jones Fracture", link: "/jones-fracture" },
-    { name: "Turf Toe Treatment", link: "/turf-toe-treatment" },
-    { name: "Ankle Fusion", link: "/ankle-fusion" },
-    { name: "Plantar Fasciitis Surgery", link: "/plantar-fasciitis-surgery" },
-    { name: "Hammertoe Correction", link: "/hammertoe-correction" },
-    { name: "Trigger Finger Surgery", link: "/trigger-finger-surgery" },
-    { name: "SLAP Repair", link: "/slap-repair" },
-    { name: "Cervical Fusion", link: "/cervical-fusion" },
-    { name: "Microdiscectomy", link: "/microdiscectomy" },
-    { name: "Patella Stabilization", link: "/patella-stabilization" }
+    { name: "Tennis Elbow Surgery in India", link: "/tennis-elbow-surgery" },
+    { name: "Bankart Repair in India", link: "/bankart-repair" },
+    { name: "Jones Fracture in India", link: "/jones-fracture" },
+    { name: "Turf Toe Treatment in India", link: "/turf-toe-treatment" },
+    { name: "Ankle Fusion in India", link: "/ankle-fusion" },
+    { name: "Plantar Fasciitis Surgery in India", link: "/plantar-fasciitis-surgery" },
+    { name: "Hammertoe Correction in India", link: "/hammertoe-correction" },
+    { name: "Trigger Finger Surgery in India", link: "/trigger-finger-surgery" },
+    { name: "SLAP Repair in India", link: "/slap-repair" },
+    { name: "Cervical Fusion in India", link: "/cervical-fusion" },
+    { name: "Microdiscectomy in India", link: "/microdiscectomy" },
+    { name: "Patella Stabilization in India", link: "/patella-stabilization" }
   ];
 
   const handleSendEmail = () => {
@@ -97,9 +97,9 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Additional Procedures - Column 2 */}
+          {/* Popular Procedures - Column 2 */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-6">More Procedures</h4>
+            <h4 className="text-lg font-semibold text-white mb-6">&nbsp;</h4>
             <ul className="space-y-3">
               {additionalProcedures.map((procedure, index) => (
                 <li key={index}>
