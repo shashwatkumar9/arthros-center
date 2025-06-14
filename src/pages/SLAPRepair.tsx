@@ -2,14 +2,15 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { CheckCircle, Clock, Users, Award } from "lucide-react";
 
 const SLAPRepair = () => {
   return (
     <>
-      <title>SLAP Repair Surgery in Patna, India | Superior Labrum Repair | Arthros Center</title>
-      <meta name="description" content="Arthroscopic SLAP repair surgery in Patna, India. Expert treatment for superior labrum anterior-posterior tears with advanced surgical techniques." />
-      <meta name="keywords" content="SLAP repair Patna, superior labrum repair India, arthroscopic SLAP surgery, shoulder labrum tear treatment Patna" />
+      <title>SLAP Repair Surgery in Patna | Superior Labral Tear Surgery India | Dr. Gurudeo Kumar</title>
+      <meta name="description" content="Expert SLAP repair surgery in Patna by Dr. Gurudeo Kumar. Advanced arthroscopic treatment for superior labral tears. Serving Bihar, Bengal, North East, Nepal." />
+      <meta name="keywords" content="SLAP repair Patna, superior labral tear surgery India, arthroscopic SLAP repair, Dr Gurudeo Kumar shoulder specialist, labral repair Bihar" />
       
       <div className="min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900">
         <Header />
@@ -19,127 +20,9 @@ const SLAPRepair = () => {
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
               SLAP Repair Surgery in <span className="text-cyan-400">Patna, India</span>
             </h1>
-            <p className="text-xl text-slate-300 max-w-3xl mx-auto mb-8">
-              Advanced arthroscopic SLAP repair for superior labrum anterior-posterior tears. 
-              Expert treatment for complex shoulder labrum injuries with minimally invasive techniques.
-            </p>
-            <Button 
-              className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-3 text-lg"
-              onClick={() => window.open('https://calendar.app.google/eSJeS2KsEsS5sbri8', '_blank')}
-            >
-              Book Consultation
-            </Button>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 mb-12">
-            <Card className="bg-slate-800/50 border-slate-700">
-              <CardHeader>
-                <CardTitle className="text-white text-2xl">What is a SLAP Tear?</CardTitle>
-              </CardHeader>
-              <CardContent className="text-slate-300 space-y-4">
-                <p>
-                  SLAP stands for Superior Labrum Anterior-Posterior. It's a tear in the upper (superior) part 
-                  of the labrum that extends from front (anterior) to back (posterior).
-                </p>
-                <p>
-                  This injury often involves the biceps tendon attachment and can cause pain, weakness, 
-                  and catching sensations in the shoulder, especially with overhead activities.
-                </p>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-slate-800/50 border-slate-700">
-              <CardHeader>
-                <CardTitle className="text-white text-2xl">SLAP Tear Classification</CardTitle>
-              </CardHeader>
-              <CardContent className="text-slate-300 space-y-4">
-                <ul className="list-disc list-inside space-y-2">
-                  <li><strong>Type I:</strong> Fraying of superior labrum</li>
-                  <li><strong>Type II:</strong> Detachment of labrum and biceps</li>
-                  <li><strong>Type III:</strong> Bucket-handle tear</li>
-                  <li><strong>Type IV:</strong> Extends into biceps tendon</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="bg-slate-800/30 rounded-lg p-8 mb-12">
-            <h2 className="text-3xl font-bold text-white mb-6">Treatment Options</h2>
-            <div className="grid md:grid-cols-3 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold text-cyan-400 mb-4">SLAP Repair</h3>
-                <p className="text-slate-300 text-sm mb-2">
-                  Reattachment of torn labrum to glenoid using suture anchors.
-                </p>
-                <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• Type II SLAP tears</li>
-                  <li>• Young active patients</li>
-                  <li>• Overhead athletes</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-cyan-400 mb-4">Biceps Tenodesis</h3>
-                <p className="text-slate-300 text-sm mb-2">
-                  Transfer of biceps tendon to humeral head with labrum debridement.
-                </p>
-                <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• Older patients (&gt;40 years)</li>
-                  <li>• Failed SLAP repair</li>
-                  <li>• Degenerative tears</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-cyan-400 mb-4">Debridement</h3>
-                <p className="text-slate-300 text-sm mb-2">
-                  Removal of loose or frayed labral tissue.
-                </p>
-                <ul className="text-slate-300 text-sm space-y-1">
-                  <li>• Type I SLAP tears</li>
-                  <li>• Partial Type III tears</li>
-                  <li>• Minimal symptoms</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12 mb-12">
-            <Card className="bg-slate-800/50 border-slate-700">
-              <CardHeader>
-                <CardTitle className="text-white text-2xl">Surgical Indications</CardTitle>
-              </CardHeader>
-              <CardContent className="text-slate-300">
-                <ul className="list-disc list-inside space-y-2">
-                  <li>Confirmed SLAP tear on MRI</li>
-                  <li>Failed conservative treatment</li>
-                  <li>Persistent pain and dysfunction</li>
-                  <li>Positive clinical tests</li>
-                  <li>Overhead sport participation</li>
-                  <li>Mechanical symptoms</li>
-                </ul>
-              </CardContent>
-            </Card>
-
-            <Card className="bg-slate-800/50 border-slate-700">
-              <CardHeader>
-                <CardTitle className="text-white text-2xl">Surgical Technique</CardTitle>
-              </CardHeader>
-              <CardContent className="text-slate-300">
-                <ul className="list-disc list-inside space-y-2">
-                  <li>Arthroscopic approach</li>
-                  <li>Portal placement for visualization</li>
-                  <li>Labral mobilization</li>
-                  <li>Bone preparation</li>
-                  <li>Suture anchor placement</li>
-                  <li>Labral reattachment</li>
-                </ul>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-white mb-6">Expert SLAP Repair Surgery</h2>
-            <p className="text-xl text-slate-300 mb-8">
-              Get back to your overhead activities with our specialized SLAP repair expertise.
+            <p className="text-xl text-slate-300 max-w-4xl mx-auto mb-8">
+              Expert SLAP (Superior Labrum Anterior-Posterior) repair surgery by Dr. Gurudeo Kumar. Advanced arthroscopic 
+              treatment for superior labral tears and biceps anchor injuries.
             </p>
             <Button 
               className="bg-cyan-600 hover:bg-cyan-700 text-white px-8 py-3 text-lg"
@@ -147,6 +30,124 @@ const SLAPRepair = () => {
             >
               Schedule Consultation
             </Button>
+          </div>
+
+          <div className="mb-12 rounded-lg overflow-hidden">
+            <img 
+              src="/lovable-uploads/243a83c3-ea4b-4413-a11e-c9de37592930.png" 
+              alt="SLAP repair surgery being performed by Dr. Gurudeo Kumar's team in Patna"
+              className="w-full h-96 object-cover"
+            />
+          </div>
+
+          <div className="grid lg:grid-cols-3 gap-8 mb-12">
+            <div className="lg:col-span-2">
+              <div className="bg-slate-800/30 rounded-lg p-8 mb-8">
+                <h2 className="text-3xl font-bold text-white mb-6">Specialized SLAP Repair for Labral Tears</h2>
+                <div className="prose prose-lg max-w-none text-slate-300">
+                  <p className="text-lg leading-relaxed mb-6">
+                    SLAP (Superior Labrum Anterior-Posterior) tears involve the top portion of the shoulder's labral 
+                    cartilage and the attachment point of the biceps tendon. These injuries are common in overhead athletes 
+                    and can cause significant pain and functional limitations. At Arthros Center in Patna, Dr. Gurudeo Kumar 
+                    specializes in arthroscopic SLAP repair, providing precise treatment for these complex injuries for 
+                    patients from Bihar, Bengal, North East India, and Nepal.
+                  </p>
+                  
+                  <p className="text-lg leading-relaxed mb-6">
+                    The arthroscopic SLAP repair involves reattaching the torn labrum and biceps anchor to the glenoid bone 
+                    using specialized suture anchors. This minimally invasive approach allows for precise visualization and 
+                    repair of the tear while preserving surrounding healthy tissue. Our technique focuses on restoring 
+                    normal shoulder biomechanics and enabling return to overhead activities and sports participation with 
+                    confidence and optimal function.
+                  </p>
+                </div>
+              </div>
+
+              <div className="bg-slate-800/30 rounded-lg p-8">
+                <h3 className="text-2xl font-bold text-white mb-6">Benefits of Arthroscopic SLAP Repair</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="flex items-start space-x-3">
+                    <CheckCircle className="w-6 h-6 text-cyan-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-2">Precise Repair</h4>
+                      <p className="text-slate-300">High-definition arthroscopy enables accurate tear assessment</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Clock className="w-6 h-6 text-cyan-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-2">Overhead Activity Return</h4>
+                      <p className="text-slate-300">Restores ability for overhead sports and activities</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Users className="w-6 h-6 text-cyan-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-2">Biceps Function</h4>
+                      <p className="text-slate-300">Preserves normal biceps tendon function and strength</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start space-x-3">
+                    <Award className="w-6 h-6 text-cyan-400 mt-1 flex-shrink-0" />
+                    <div>
+                      <h4 className="text-lg font-semibold text-white mb-2">Minimally Invasive</h4>
+                      <p className="text-slate-300">Small incisions with faster recovery and less scarring</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="space-y-6">
+              <Card className="bg-slate-800/50 border-slate-700">
+                <CardHeader>
+                  <CardTitle className="text-white">Procedure Details</CardTitle>
+                </CardHeader>
+                <CardContent className="text-slate-300 space-y-4">
+                  <div>
+                    <h4 className="font-semibold text-cyan-400">Duration</h4>
+                    <p>1-2 hours</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-cyan-400">Anesthesia</h4>
+                    <p>General anesthesia</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-cyan-400">Hospital Stay</h4>
+                    <p>Same day discharge</p>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-cyan-400">Recovery</h4>
+                    <p>4-6 months return to sports</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-slate-800/50 border-slate-700">
+                <CardHeader>
+                  <CardTitle className="text-white">Success Rate</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="text-center">
+                    <div className="text-4xl font-bold text-cyan-400 mb-2">90%</div>
+                    <p className="text-slate-300">Good to excellent outcomes with return to activities</p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="bg-cyan-600 text-white">
+                <CardContent className="p-6">
+                  <h4 className="font-bold mb-3">Expert SLAP Repair</h4>
+                  <p className="mb-4 text-cyan-100">Specialized treatment for superior labral tears</p>
+                  <Button 
+                    className="w-full bg-white text-cyan-600 hover:bg-slate-100"
+                    onClick={() => window.open('https://calendar.app.google/eSJeS2KsEsS5sbri8', '_blank')}
+                  >
+                    Book Consultation
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
         
