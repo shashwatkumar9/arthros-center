@@ -28,7 +28,7 @@ const Hero = () => {
               <div className="w-96 h-96 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 p-1">
                 <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
                   <img 
-                    src="/lovable-uploads/276003e9-a200-45ae-b1f5-b39c6ae3f1eb.png" 
+                    src="/lovable-uploads/74ef67d4-adc4-4766-b6ea-058397eff73b.png" 
                     alt="Dr. Gurudeo Kumar" 
                     className="w-full h-full object-cover rounded-full"
                   />
