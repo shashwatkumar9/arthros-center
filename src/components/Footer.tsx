@@ -1,5 +1,7 @@
+
 import { Mail, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const quickLinks = [
@@ -11,13 +13,34 @@ const Footer = () => {
     "Contact Us"
   ];
 
-  const procedures = [
-    "ACL Reconstruction",
-    "Rotator Cuff Repair",
-    "Hip Replacement",
-    "Knee Replacement",
-    "Sports Medicine",
-    "Trauma Care"
+  const popularProcedures = [
+    { name: "ACL Reconstruction", link: "/acl-reconstruction" },
+    { name: "Rotator Cuff Repair", link: "/rotator-cuff-repair" },
+    { name: "Total Hip Replacement", link: "/total-hip-replacement" },
+    { name: "Knee Replacement", link: "/knee-replacement" },
+    { name: "Meniscus Repair", link: "/meniscus-repair" },
+    { name: "Shoulder Arthroscopy", link: "/bankart-repair" },
+    { name: "Ankle Arthroscopy", link: "/ankle-arthroscopy" },
+    { name: "Carpal Tunnel Release", link: "/carpal-tunnel-release" },
+    { name: "Bunion Surgery", link: "/bunion-surgery" },
+    { name: "Achilles Repair", link: "/achilles-repair" },
+    { name: "Hip Arthroscopy", link: "/fai-surgery" },
+    { name: "Lumbar Fusion", link: "/lumbar-fusion" }
+  ];
+
+  const additionalProcedures = [
+    { name: "Tennis Elbow Surgery", link: "/tennis-elbow-surgery" },
+    { name: "Bankart Repair", link: "/bankart-repair" },
+    { name: "Jones Fracture", link: "/jones-fracture" },
+    { name: "Turf Toe Treatment", link: "/turf-toe-treatment" },
+    { name: "Ankle Fusion", link: "/ankle-fusion" },
+    { name: "Plantar Fasciitis Surgery", link: "/plantar-fasciitis-surgery" },
+    { name: "Hammertoe Correction", link: "/hammertoe-correction" },
+    { name: "Trigger Finger Surgery", link: "/trigger-finger-surgery" },
+    { name: "SLAP Repair", link: "/slap-repair" },
+    { name: "Cervical Fusion", link: "/cervical-fusion" },
+    { name: "Microdiscectomy", link: "/microdiscectomy" },
+    { name: "Patella Stabilization", link: "/patella-stabilization" }
   ];
 
   const handleSendEmail = () => {
@@ -27,12 +50,12 @@ const Footer = () => {
   return (
     <footer className="bg-slate-900 text-slate-300">
       <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-4 gap-12">
+        <div className="grid md:grid-cols-5 gap-8">
           {/* Company Info */}
           <div>
             <h3 className="text-2xl font-bold text-white mb-6">Arthros Center</h3>
             <p className="mb-6 leading-relaxed">
-              Advanced orthopedic care for active lives. 
+              Advanced orthopedic care for everyone! 
               Specialized treatments and personalized care for 
               every orthopedic condition.
             </p>
@@ -57,13 +80,35 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Popular Procedures */}
+          {/* Popular Procedures - Column 1 */}
           <div>
             <h4 className="text-lg font-semibold text-white mb-6">Popular Procedures</h4>
             <ul className="space-y-3">
-              {procedures.map((procedure, index) => (
+              {popularProcedures.map((procedure, index) => (
                 <li key={index}>
-                  <a href="#" className="hover:text-cyan-400 transition-colors">{procedure}</a>
+                  <Link 
+                    to={procedure.link} 
+                    className="hover:text-cyan-400 transition-colors"
+                  >
+                    {procedure.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Additional Procedures - Column 2 */}
+          <div>
+            <h4 className="text-lg font-semibold text-white mb-6">More Procedures</h4>
+            <ul className="space-y-3">
+              {additionalProcedures.map((procedure, index) => (
+                <li key={index}>
+                  <Link 
+                    to={procedure.link} 
+                    className="hover:text-cyan-400 transition-colors"
+                  >
+                    {procedure.name}
+                  </Link>
                 </li>
               ))}
             </ul>
