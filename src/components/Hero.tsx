@@ -16,7 +16,13 @@ const Hero = () => {
               orthopedic condition by Dr. Gurudeo Kumar and his 
               expert team.
             </p>
-            <div className="flex justify-end">
+            <div className="flex items-center gap-4 justify-end">
+              <Button className="bg-gradient-to-r from-blue-500 to-blue-600 hover:from-blue-600 hover:to-blue-700 text-white px-6 py-3 text-base border border-blue-400 shadow-lg">
+                15000+ Surgeries
+              </Button>
+              <Button className="bg-gradient-to-r from-purple-500 to-purple-600 hover:from-purple-600 hover:to-purple-700 text-white px-6 py-3 text-base border border-purple-400 shadow-lg">
+                20 Years Experience
+              </Button>
               <Button className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 text-lg">
                 Book Appointment
               </Button>
