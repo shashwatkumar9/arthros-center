@@ -12,12 +12,9 @@ const CallToAction = () => {
           Schedule a consultation with Dr. Gurudeo Kumar and our expert team to discuss your 
           orthopedic concerns and treatment options.
         </p>
-        <div className="flex justify-center space-x-6">
+        <div className="flex justify-center">
           <Button className="bg-cyan-500 hover:bg-cyan-600 text-white px-10 py-4 text-lg">
             Book an Appointment
-          </Button>
-          <Button variant="outline" className="border-white text-white hover:bg-white hover:text-blue-600 px-10 py-4 text-lg">
-            Contact Us
           </Button>
         </div>
       </div>
