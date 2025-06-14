@@ -1,16 +1,14 @@
-
 import { Mail, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const Footer = () => {
   const quickLinks = [
-    "Home",
-    "About Us", 
-    "Services",
-    "Our Doctors",
-    "Testimonials",
-    "Contact Us"
+    { name: "Home", link: "/" },
+    { name: "About Us", link: "/about-us" }, 
+    { name: "Services", link: "/services" },
+    { name: "Testimonials", link: "/testimonials" },
+    { name: "Contact Us", link: "/contact-us" }
   ];
 
   const popularProcedures = [
@@ -60,11 +58,16 @@ const Footer = () => {
               every orthopedic condition.
             </p>
             <div className="flex space-x-4">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white">f</div>
-              <div className="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center text-white">i</div>
-              <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center text-white">
+              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white cursor-not-allowed opacity-50">f</div>
+              <div className="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center text-white cursor-not-allowed opacity-50">i</div>
+              <a 
+                href="https://www.youtube.com/channel/UCqoHlC6or-t1QJRfWYi4GtQ/about" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center text-white hover:bg-red-700 transition-colors"
+              >
                 <Youtube className="w-5 h-5" />
-              </div>
+              </a>
             </div>
           </div>
 
@@ -74,7 +77,7 @@ const Footer = () => {
             <ul className="space-y-3">
               {quickLinks.map((link, index) => (
                 <li key={index}>
-                  <a href="#" className="hover:text-cyan-400 transition-colors">{link}</a>
+                  <Link to={link.link} className="hover:text-cyan-400 transition-colors">{link.name}</Link>
                 </li>
               ))}
             </ul>

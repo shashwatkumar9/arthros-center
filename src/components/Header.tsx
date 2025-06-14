@@ -1,3 +1,4 @@
+
 import { Search, Phone, Mail, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -493,9 +494,14 @@ const Header = () => {
           <div className="flex space-x-3">
             <div className="w-6 h-6 bg-blue-600 rounded flex items-center justify-center text-white text-xs">f</div>
             <div className="w-6 h-6 bg-pink-600 rounded flex items-center justify-center text-white text-xs">i</div>
-            <div className="w-6 h-6 bg-red-600 rounded flex items-center justify-center text-white text-xs">
+            <a 
+              href="https://www.youtube.com/channel/UCqoHlC6or-t1QJRfWYi4GtQ/about" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="w-6 h-6 bg-red-600 rounded flex items-center justify-center text-white text-xs hover:bg-red-700 transition-colors"
+            >
               <Youtube className="w-3 h-3" />
-            </div>
+            </a>
           </div>
         </div>
       </div>
@@ -513,10 +519,10 @@ const Header = () => {
 
           <nav className="flex items-center space-x-6">
             <Link to="/" className="hover:text-cyan-400 transition-colors">Home</Link>
-            <a href="#" className="hover:text-cyan-400 transition-colors">About Us</a>
-            <a href="#" className="hover:text-cyan-400 transition-colors">Services</a>
-            <a href="#" className="hover:text-cyan-400 transition-colors">Doctors</a>
-            <a href="#" className="hover:text-cyan-400 transition-colors">Contact</a>
+            <Link to="/about-us" className="hover:text-cyan-400 transition-colors">About Us</Link>
+            <Link to="/services" className="hover:text-cyan-400 transition-colors">Services</Link>
+            <Link to="/testimonials" className="hover:text-cyan-400 transition-colors">Testimonials</Link>
+            <Link to="/contact-us" className="hover:text-cyan-400 transition-colors">Contact</Link>
             <Button 
               className="bg-blue-600 hover:bg-blue-700 text-white px-6"
               onClick={() => window.open('https://calendar.app.google/eSJeS2KsEsS5sbri8', '_blank')}

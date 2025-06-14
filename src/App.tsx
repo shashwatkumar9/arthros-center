@@ -6,6 +6,10 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import AboutUs from "./pages/AboutUs";
+import Services from "./pages/Services";
+import TestimonialsPage from "./pages/TestimonialsPage";
+import ContactUs from "./pages/ContactUs";
 import KneeSurgeries from "./pages/KneeSurgeries";
 import ShoulderElbow from "./pages/ShoulderElbow";
 import HipPelvis from "./pages/HipPelvis";
@@ -116,6 +120,11 @@ const App = () => (
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/about-us" element={<AboutUs />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/testimonials" element={<TestimonialsPage />} />
+          <Route path="/contact-us" element={<ContactUs />} />
+          
           <Route path="/knee-surgeries" element={<KneeSurgeries />} />
           <Route path="/shoulder-elbow" element={<ShoulderElbow />} />
           <Route path="/hip-pelvis" element={<HipPelvis />} />
