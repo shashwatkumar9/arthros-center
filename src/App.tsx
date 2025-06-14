@@ -10,6 +10,9 @@ import AboutUs from "./pages/AboutUs";
 import Services from "./pages/Services";
 import TestimonialsPage from "./pages/TestimonialsPage";
 import ContactUs from "./pages/ContactUs";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsConditions from "./pages/TermsConditions";
+import Sitemap from "./pages/Sitemap";
 import KneeSurgeries from "./pages/KneeSurgeries";
 import ShoulderElbow from "./pages/ShoulderElbow";
 import HipPelvis from "./pages/HipPelvis";
@@ -124,14 +127,9 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/testimonials" element={<TestimonialsPage />} />
           <Route path="/contact-us" element={<ContactUs />} />
-          
-          <Route path="/knee-surgeries" element={<KneeSurgeries />} />
-          <Route path="/shoulder-elbow" element={<ShoulderElbow />} />
-          <Route path="/hip-pelvis" element={<HipPelvis />} />
-          <Route path="/spine" element={<SpineSurgery />} />
-          <Route path="/sports-medicine" element={<SportsMedicine />} />
-          <Route path="/hand-wrist" element={<HandWrist />} />
-          <Route path="/foot-ankle" element={<FootAnkle />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
+          <Route path="/sitemap" element={<Sitemap />} />
           
           {/* ACL Procedures */}
           <Route path="/acl-procedures" element={<ACLProcedures />} />
