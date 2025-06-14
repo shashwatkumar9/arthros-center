@@ -196,9 +196,35 @@ const Header = () => {
   ];
 
   const footServices = [
-    { category: "Foot Surgery", items: ["Bunion Surgery", "Hammertoe Correction", "Plantar Fasciitis Surgery", "Achilles Repair"] },
-    { category: "Ankle Surgery", items: ["Ankle Arthroscopy", "Ankle Replacement", "Ankle Fusion", "Ligament Reconstruction"] },
-    { category: "Sports Injuries", items: ["Ankle Sprains", "Jones Fracture", "Turf Toe Treatment"] }
+    { 
+      category: "Foot Surgery", 
+      route: "/foot-surgery-procedures",
+      items: [
+        { name: "Bunion Surgery", route: "/bunion-surgery" },
+        { name: "Hammertoe Correction", route: "/hammertoe-correction" },
+        { name: "Plantar Fasciitis Surgery", route: "/plantar-fasciitis-surgery" },
+        { name: "Achilles Repair", route: "/achilles-repair" }
+      ]
+    },
+    { 
+      category: "Ankle Surgery", 
+      route: "/ankle-surgery-procedures",
+      items: [
+        { name: "Ankle Arthroscopy", route: "/ankle-arthroscopy" },
+        { name: "Ankle Replacement", route: "/ankle-replacement" },
+        { name: "Ankle Fusion", route: "/ankle-fusion" },
+        { name: "Ligament Reconstruction", route: "/ankle-ligament-reconstruction" }
+      ]
+    },
+    { 
+      category: "Sports Injuries", 
+      route: "/sports-injuries-procedures",
+      items: [
+        { name: "Ankle Sprains", route: "/ankle-sprains" },
+        { name: "Jones Fracture", route: "/jones-fracture" },
+        { name: "Turf Toe Treatment", route: "/turf-toe-treatment" }
+      ]
+    }
   ];
 
   const getDescription = (title: string) => {

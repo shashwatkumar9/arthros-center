@@ -93,6 +93,11 @@ import GanglionCystRemoval from "./pages/GanglionCystRemoval";
 import CubitalTunnelSurgery from "./pages/CubitalTunnelSurgery";
 import NerveRepair from "./pages/NerveRepair";
 import NerveTransfer from "./pages/NerveTransfer";
+import BunionSurgery from "./pages/BunionSurgery";
+import HammertoeCorrection from "./pages/HammertoeCorrection";
+import PlantarFasciitisSurgery from "./pages/PlantarFasciitisSurgery";
+import AchillesRepair from "./pages/AchillesRepair";
+import AnkleArthroscopy from "./pages/AnkleArthroscopy";
 
 const queryClient = new QueryClient();
 
@@ -220,6 +225,13 @@ const App = () => (
           <Route path="/foot-surgery-procedures" element={<FootSurgeryProcedures />} />
           <Route path="/ankle-surgery-procedures" element={<AnkleSurgeryProcedures />} />
           <Route path="/sports-injuries-procedures" element={<SportsInjuriesProcedures />} />
+          
+          {/* Foot & Ankle Procedures */}
+          <Route path="/bunion-surgery" element={<BunionSurgery />} />
+          <Route path="/hammertoe-correction" element={<HammertoeCorrection />} />
+          <Route path="/plantar-fasciitis-surgery" element={<PlantarFasciitisSurgery />} />
+          <Route path="/achilles-repair" element={<AchillesRepair />} />
+          <Route path="/ankle-arthroscopy" element={<AnkleArthroscopy />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
