@@ -1,4 +1,3 @@
-
 import { Search, Phone, Mail, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -44,9 +43,31 @@ const Header = () => {
   ];
 
   const shoulderServices = [
-    { category: "Rotator Cuff", items: ["Rotator Cuff Repair", "Massive Rotator Cuff Repair", "Rotator Cuff Reconstruction"] },
-    { category: "Shoulder Instability", items: ["Bankart Repair", "Latarjet Procedure", "SLAP Repair"] },
-    { category: "Elbow Procedures", items: ["Tennis Elbow Surgery", "Golfer's Elbow Treatment", "Elbow Arthroscopy", "UCL Reconstruction"] }
+    { 
+      category: "Rotator Cuff", 
+      items: [
+        { name: "Rotator Cuff Repair", route: "/rotator-cuff-repair" },
+        { name: "Massive Rotator Cuff Repair", route: "/massive-rotator-cuff-repair" },
+        { name: "Rotator Cuff Reconstruction", route: "/rotator-cuff-reconstruction" }
+      ]
+    },
+    { 
+      category: "Shoulder Instability", 
+      items: [
+        { name: "Bankart Repair", route: "/bankart-repair" },
+        { name: "Latarjet Procedure", route: "/latarjet-procedure" },
+        { name: "SLAP Repair", route: "/slap-repair" }
+      ]
+    },
+    { 
+      category: "Elbow Procedures", 
+      items: [
+        { name: "Tennis Elbow Surgery", route: "/tennis-elbow-surgery" },
+        { name: "Golfer's Elbow Treatment", route: "/shoulder-elbow" },
+        { name: "Elbow Arthroscopy", route: "/shoulder-elbow" },
+        { name: "UCL Reconstruction", route: "/shoulder-elbow" }
+      ]
+    }
   ];
 
   const hipServices = [
@@ -108,6 +129,45 @@ const Header = () => {
             {services.map((service, index) => (
               <div key={index} className="space-y-3">
                 <Link to={service.route} className="block">
+                  <h4 className="text-slate-800 font-semibold text-base mb-3 text-blue-700 border-b border-blue-100 pb-2 hover:text-blue-900 transition-colors">
+                    {service.category}
+                  </h4>
+                </Link>
+                <div className="space-y-1">
+                  {service.items.map((item, itemIndex) => (
+                    <Link
+                      key={itemIndex}
+                      to={item.route}
+                      className="block w-full text-slate-600 hover:text-blue-700 hover:bg-blue-50 text-left text-sm py-2 px-3 rounded-md transition-all duration-200 hover:translate-x-1"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </HoverCardContent>
+    </HoverCard>
+  );
+
+  const renderShoulderHoverMenu = (title: string, services: typeof shoulderServices, linkPath: string) => (
+    <HoverCard openDelay={0} closeDelay={100}>
+      <HoverCardTrigger className="hover:text-cyan-400 transition-colors flex items-center space-x-1 bg-transparent border-none text-white text-sm cursor-pointer px-3 py-2 rounded-md hover:bg-slate-600/50">
+        <span>{title}</span>
+        <span className="text-xs">▼</span>
+      </HoverCardTrigger>
+      <HoverCardContent className="w-[800px] bg-white border border-gray-200 shadow-2xl z-50 p-0 rounded-lg overflow-hidden">
+        <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white p-4">
+          <h3 className="font-bold text-lg">{title}</h3>
+          <p className="text-blue-100 text-sm">{getDescription(title)}</p>
+        </div>
+        <div className="p-6">
+          <div className="grid grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <div key={index} className="space-y-3">
+                <Link to={linkPath} className="block">
                   <h4 className="text-slate-800 font-semibold text-base mb-3 text-blue-700 border-b border-blue-100 pb-2 hover:text-blue-900 transition-colors">
                     {service.category}
                   </h4>
@@ -231,7 +291,7 @@ const Header = () => {
               {renderKneeHoverMenu("Knee Surgeries", kneeServices, "/knee-surgeries")}
             </Link>
             <Link to="/shoulder-elbow" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
-              {renderHoverMenu("Shoulder & Elbow", shoulderServices, "/shoulder-elbow")}
+              {renderShoulderHoverMenu("Shoulder & Elbow", shoulderServices, "/shoulder-elbow")}
             </Link>
             <Link to="/hip-pelvis" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
               {renderHoverMenu("Hip & Pelvis", hipServices, "/hip-pelvis")}

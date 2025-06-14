@@ -27,6 +27,13 @@ import MeniscusRepair from "./pages/MeniscusRepair";
 import KneeReplacement from "./pages/KneeReplacement";
 import PatellaStabilization from "./pages/PatellaStabilization";
 import CartilageRestoration from "./pages/CartilageRestoration";
+import RotatorCuffRepair from "./pages/RotatorCuffRepair";
+import MassiveRotatorCuffRepair from "./pages/MassiveRotatorCuffRepair";
+import RotatorCuffReconstruction from "./pages/RotatorCuffReconstruction";
+import BankartRepair from "./pages/BankartRepair";
+import LatarjetProcedure from "./pages/LatarjetProcedure";
+import SLAPRepair from "./pages/SLAPRepair";
+import TennisElbowSurgery from "./pages/TennisElbowSurgery";
 
 const queryClient = new QueryClient();
 
@@ -66,6 +73,15 @@ const App = () => (
           <Route path="/knee-replacement" element={<KneeReplacement />} />
           <Route path="/patella-stabilization" element={<PatellaStabilization />} />
           <Route path="/cartilage-restoration" element={<CartilageRestoration />} />
+          
+          {/* Shoulder & Elbow Procedures */}
+          <Route path="/rotator-cuff-repair" element={<RotatorCuffRepair />} />
+          <Route path="/massive-rotator-cuff-repair" element={<MassiveRotatorCuffRepair />} />
+          <Route path="/rotator-cuff-reconstruction" element={<RotatorCuffReconstruction />} />
+          <Route path="/bankart-repair" element={<BankartRepair />} />
+          <Route path="/latarjet-procedure" element={<LatarjetProcedure />} />
+          <Route path="/slap-repair" element={<SLAPRepair />} />
+          <Route path="/tennis-elbow-surgery" element={<TennisElbowSurgery />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
