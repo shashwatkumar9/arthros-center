@@ -1,7 +1,6 @@
-
 import { Search, Phone, Mail, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import SearchCommand from "./SearchCommand";
 import {
   HoverCard,
   HoverCardContent,
@@ -138,13 +137,7 @@ const Header = () => {
           <div className="text-2xl font-bold">Arthros Center</div>
           
           <div className="flex items-center space-x-4 flex-1 max-w-md mx-8">
-            <div className="relative flex-1">
-              <Input 
-                placeholder="Search procedures, conditions..." 
-                className="bg-slate-700 border-slate-600 text-white placeholder-slate-400 pr-10"
-              />
-              <Search className="absolute right-3 top-1/2 transform -translate-y-1/2 w-4 h-4 text-slate-400" />
-            </div>
+            <SearchCommand />
           </div>
 
           <nav className="flex items-center space-x-6">
