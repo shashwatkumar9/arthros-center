@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
@@ -15,6 +14,8 @@ import { Badge } from '@/components/ui/badge';
 import { supabase } from '@/integrations/supabase/client';
 import { toast } from 'sonner';
 import { PlusCircle, Edit, Trash2, Users, FileText, LogOut } from 'lucide-react';
+
+type UserRole = 'admin' | 'editor' | 'viewer';
 
 const AdminDashboard = () => {
   const { user, userProfile, signOut } = useAuth();
@@ -178,7 +179,7 @@ const AdminDashboard = () => {
     }
   };
 
-  const handleUpdateUserRole = async (userId: string, newRole: string) => {
+  const handleUpdateUserRole = async (userId: string, newRole: UserRole) => {
     const { error } = await supabase
       .from('profiles')
       .update({ role: newRole })
