@@ -22,19 +22,23 @@ const SearchCommand = () => {
   const navigate = useNavigate();
 
   const searchData = [
-    // Knee Surgeries
-    { category: "Knee Surgeries", title: "ACL Reconstruction", route: "/knee-surgeries" },
-    { category: "Knee Surgeries", title: "ACL Repair", route: "/knee-surgeries" },
-    { category: "Knee Surgeries", title: "Revision ACL Surgery", route: "/knee-surgeries" },
-    { category: "Knee Surgeries", title: "ACL with Meniscus Repair", route: "/knee-surgeries" },
-    { category: "Knee Surgeries", title: "PCL Reconstruction", route: "/knee-surgeries" },
-    { category: "Knee Surgeries", title: "MCL Reconstruction", route: "/knee-surgeries" },
-    { category: "Knee Surgeries", title: "Multi-ligament Reconstruction", route: "/knee-surgeries" },
-    { category: "Knee Surgeries", title: "Posterolateral Corner Repair", route: "/knee-surgeries" },
-    { category: "Knee Surgeries", title: "Meniscus Repair", route: "/knee-surgeries" },
-    { category: "Knee Surgeries", title: "Knee Replacement", route: "/knee-surgeries" },
-    { category: "Knee Surgeries", title: "Patella Stabilization", route: "/knee-surgeries" },
-    { category: "Knee Surgeries", title: "Cartilage Restoration", route: "/knee-surgeries" },
+    // Knee Surgeries - ACL Procedures
+    { category: "ACL Procedures", title: "ACL Reconstruction", route: "/acl-reconstruction" },
+    { category: "ACL Procedures", title: "ACL Repair", route: "/acl-repair" },
+    { category: "ACL Procedures", title: "Revision ACL Surgery", route: "/revision-acl-surgery" },
+    { category: "ACL Procedures", title: "ACL with Meniscus Repair", route: "/acl-with-meniscus-repair" },
+    
+    // Knee Surgeries - PCL & Multi-ligament
+    { category: "PCL & Multi-ligament", title: "PCL Reconstruction", route: "/pcl-reconstruction" },
+    { category: "PCL & Multi-ligament", title: "MCL Reconstruction", route: "/mcl-reconstruction" },
+    { category: "PCL & Multi-ligament", title: "Multi-ligament Reconstruction", route: "/multi-ligament-reconstruction" },
+    { category: "PCL & Multi-ligament", title: "Posterolateral Corner Repair", route: "/posterolateral-corner-repair" },
+    
+    // Knee Surgeries - Other Knee Procedures
+    { category: "Other Knee Procedures", title: "Meniscus Repair", route: "/meniscus-repair" },
+    { category: "Other Knee Procedures", title: "Knee Replacement", route: "/knee-replacement" },
+    { category: "Other Knee Procedures", title: "Patella Stabilization", route: "/patella-stabilization" },
+    { category: "Other Knee Procedures", title: "Cartilage Restoration", route: "/cartilage-restoration" },
 
     // Shoulder & Elbow
     { category: "Shoulder & Elbow", title: "Rotator Cuff Repair", route: "/shoulder-elbow" },

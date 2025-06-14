@@ -11,9 +11,36 @@ import {
 
 const Header = () => {
   const kneeServices = [
-    { category: "ACL Procedures", items: ["ACL Reconstruction", "ACL Repair", "Revision ACL Surgery", "ACL with Meniscus Repair"] },
-    { category: "PCL & Multi-ligament", items: ["PCL Reconstruction", "MCL Reconstruction", "Multi-ligament Reconstruction", "Posterolateral Corner Repair"] },
-    { category: "Other Knee Procedures", items: ["Meniscus Repair", "Knee Replacement", "Patella Stabilization", "Cartilage Restoration"] }
+    { 
+      category: "ACL Procedures", 
+      route: "/acl-procedures",
+      items: [
+        { name: "ACL Reconstruction", route: "/acl-reconstruction" },
+        { name: "ACL Repair", route: "/acl-repair" },
+        { name: "Revision ACL Surgery", route: "/revision-acl-surgery" },
+        { name: "ACL with Meniscus Repair", route: "/acl-with-meniscus-repair" }
+      ]
+    },
+    { 
+      category: "PCL & Multi-ligament", 
+      route: "/pcl-multi-ligament",
+      items: [
+        { name: "PCL Reconstruction", route: "/pcl-reconstruction" },
+        { name: "MCL Reconstruction", route: "/mcl-reconstruction" },
+        { name: "Multi-ligament Reconstruction", route: "/multi-ligament-reconstruction" },
+        { name: "Posterolateral Corner Repair", route: "/posterolateral-corner-repair" }
+      ]
+    },
+    { 
+      category: "Other Knee Procedures", 
+      route: "/other-knee-procedures",
+      items: [
+        { name: "Meniscus Repair", route: "/meniscus-repair" },
+        { name: "Knee Replacement", route: "/knee-replacement" },
+        { name: "Patella Stabilization", route: "/patella-stabilization" },
+        { name: "Cartilage Restoration", route: "/cartilage-restoration" }
+      ]
+    }
   ];
 
   const shoulderServices = [
@@ -64,6 +91,45 @@ const Header = () => {
     };
     return descriptions[title] || "Specialized procedures and treatments";
   };
+
+  const renderKneeHoverMenu = (title: string, services: typeof kneeServices, linkPath: string) => (
+    <HoverCard openDelay={0} closeDelay={100}>
+      <HoverCardTrigger className="hover:text-cyan-400 transition-colors flex items-center space-x-1 bg-transparent border-none text-white text-sm cursor-pointer px-3 py-2 rounded-md hover:bg-slate-600/50">
+        <span>{title}</span>
+        <span className="text-xs">▼</span>
+      </HoverCardTrigger>
+      <HoverCardContent className="w-[800px] bg-white border border-gray-200 shadow-2xl z-50 p-0 rounded-lg overflow-hidden">
+        <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white p-4">
+          <h3 className="font-bold text-lg">{title}</h3>
+          <p className="text-blue-100 text-sm">{getDescription(title)}</p>
+        </div>
+        <div className="p-6">
+          <div className="grid grid-cols-3 gap-6">
+            {services.map((service, index) => (
+              <div key={index} className="space-y-3">
+                <Link to={service.route} className="block">
+                  <h4 className="text-slate-800 font-semibold text-base mb-3 text-blue-700 border-b border-blue-100 pb-2 hover:text-blue-900 transition-colors">
+                    {service.category}
+                  </h4>
+                </Link>
+                <div className="space-y-1">
+                  {service.items.map((item, itemIndex) => (
+                    <Link
+                      key={itemIndex}
+                      to={item.route}
+                      className="block w-full text-slate-600 hover:text-blue-700 hover:bg-blue-50 text-left text-sm py-2 px-3 rounded-md transition-all duration-200 hover:translate-x-1"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </HoverCardContent>
+    </HoverCard>
+  );
 
   const renderHoverMenu = (title: string, services: { category: string; items: string[] }[], linkPath: string) => (
     <HoverCard openDelay={0} closeDelay={100}>
@@ -162,7 +228,7 @@ const Header = () => {
         <div className="container mx-auto px-4">
           <nav className="flex space-x-2 text-sm">
             <Link to="/knee-surgeries" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
-              {renderHoverMenu("Knee Surgeries", kneeServices, "/knee-surgeries")}
+              {renderKneeHoverMenu("Knee Surgeries", kneeServices, "/knee-surgeries")}
             </Link>
             <Link to="/shoulder-elbow" className="hover:text-cyan-400 transition-colors px-3 py-2 rounded-md hover:bg-slate-600/50">
               {renderHoverMenu("Shoulder & Elbow", shoulderServices, "/shoulder-elbow")}
