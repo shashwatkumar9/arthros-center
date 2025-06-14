@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
@@ -176,21 +175,6 @@ const ContactUs = () => {
               </div>
             </div>
           </div>
-
-          <Card className="bg-slate-700/50 border-slate-600">
-            <CardContent className="p-8 text-center">
-              <h3 className="text-3xl font-bold text-white mb-4">Emergency Care</h3>
-              <p className="text-slate-300 mb-6 text-lg">
-                For urgent orthopedic emergencies, please contact us immediately at Arthros Center.
-              </p>
-              <Button 
-                className="bg-red-600 hover:bg-red-700 text-white"
-                onClick={() => window.location.href = 'tel:+917258065424'}
-              >
-                Emergency Contact: +91 7258065424
-              </Button>
-            </CardContent>
-          </Card>
         </div>
       </section>
 
