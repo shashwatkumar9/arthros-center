@@ -83,6 +83,10 @@ import SportsPhysicals from "./pages/SportsPhysicals";
 import ConcussionManagement from "./pages/ConcussionManagement";
 import OveruseInjuries from "./pages/OveruseInjuries";
 import YouthSportsMedicine from "./pages/YouthSportsMedicine";
+import CarpalTunnelRelease from "./pages/CarpalTunnelRelease";
+import TriggerFingerSurgery from "./pages/TriggerFingerSurgery";
+import DupuytrensSurgery from "./pages/DupuytrensSurgery";
+import HandFractureRepair from "./pages/HandFractureRepair";
 
 const queryClient = new QueryClient();
 
@@ -187,6 +191,12 @@ const App = () => (
           <Route path="/athletic-injuries-procedures" element={<AthleticInjuriesProcedures />} />
           <Route path="/performance-procedures" element={<PerformanceProcedures />} />
           <Route path="/specialized-care-procedures" element={<SpecializedCareProcedures />} />
+          
+          {/* Hand & Wrist Procedures */}
+          <Route path="/carpal-tunnel-release" element={<CarpalTunnelRelease />} />
+          <Route path="/trigger-finger-surgery" element={<TriggerFingerSurgery />} />
+          <Route path="/dupuytrens-surgery" element={<DupuytrensSurgery />} />
+          <Route path="/hand-fracture-repair" element={<HandFractureRepair />} />
           
           {/* Hand & Wrist Category Pages */}
           <Route path="/hand-surgery-procedures" element={<HandSurgeryProcedures />} />
