@@ -13,6 +13,9 @@ import SpineSurgery from "./pages/SpineSurgery";
 import SportsMedicine from "./pages/SportsMedicine";
 import HandWrist from "./pages/HandWrist";
 import FootAnkle from "./pages/FootAnkle";
+import ACLProcedures from "./pages/ACLProcedures";
+import ACLReconstruction from "./pages/ACLReconstruction";
+import ACLRepair from "./pages/ACLRepair";
 
 const queryClient = new QueryClient();
 
@@ -31,6 +34,9 @@ const App = () => (
           <Route path="/sports-medicine" element={<SportsMedicine />} />
           <Route path="/hand-wrist" element={<HandWrist />} />
           <Route path="/foot-ankle" element={<FootAnkle />} />
+          <Route path="/acl-procedures" element={<ACLProcedures />} />
+          <Route path="/acl-reconstruction" element={<ACLReconstruction />} />
+          <Route path="/acl-repair" element={<ACLRepair />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
