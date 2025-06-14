@@ -1,5 +1,4 @@
-
-import { Mail } from "lucide-react";
+import { Mail, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
@@ -39,9 +38,10 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center text-white">f</div>
-              <div className="w-10 h-10 bg-blue-400 rounded-lg flex items-center justify-center text-white">t</div>
               <div className="w-10 h-10 bg-pink-600 rounded-lg flex items-center justify-center text-white">i</div>
-              <div className="w-10 h-10 bg-blue-700 rounded-lg flex items-center justify-center text-white">in</div>
+              <div className="w-10 h-10 bg-red-600 rounded-lg flex items-center justify-center text-white">
+                <Youtube className="w-5 h-5" />
+              </div>
             </div>
           </div>
 
