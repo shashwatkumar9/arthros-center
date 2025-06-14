@@ -118,51 +118,38 @@ const SearchCommand = () => {
   };
 
   return (
-    <>
-      <div className="relative flex-1">
+    <Popover open={open} onOpenChange={setOpen}>
+      <PopoverTrigger asChild>
         <Button
           variant="ghost"
           className="w-full justify-start bg-slate-700 border-slate-600 text-slate-400 hover:bg-slate-600 hover:text-white"
-          onClick={() => setOpen(true)}
         >
           <Search className="mr-2 h-4 w-4" />
           Search procedures, conditions...
         </Button>
-      </div>
-
-      <Popover open={open} onOpenChange={setOpen}>
-        <PopoverTrigger asChild>
-          <Button
-            variant="ghost"
-            className="w-full justify-start bg-slate-700 border-slate-600 text-slate-400 hover:bg-slate-600 hover:text-white"
-          >
-            <Search className="mr-2 h-4 w-4" />
-            Search procedures, conditions...
-          </Button>
-        </PopoverTrigger>
-        <PopoverContent className="w-[400px] p-0" align="start">
-          <Command className="rounded-lg border shadow-md">
-            <CommandInput placeholder="Search procedures, conditions..." />
-            <CommandList>
-              <CommandEmpty>No results found.</CommandEmpty>
-              {Object.entries(groupedData).map(([category, items]) => (
-                <CommandGroup key={category} heading={category}>
-                  {items.map((item) => (
-                    <CommandItem
-                      key={item.title}
-                      onSelect={() => handleSelect(item.url)}
-                      className="cursor-pointer"
-                    >
-                      {item.title}
-                    </CommandItem>
-                  ))}
-                </CommandGroup>
-              ))}
-            </CommandList>
-          </Command>
-        </PopoverContent>
-      </Popover>
-    </>
+      </PopoverTrigger>
+      <PopoverContent className="w-[400px] p-0" align="start">
+        <Command className="rounded-lg border shadow-md">
+          <CommandInput placeholder="Search procedures, conditions..." />
+          <CommandList>
+            <CommandEmpty>No results found.</CommandEmpty>
+            {Object.entries(groupedData).map(([category, items]) => (
+              <CommandGroup key={category} heading={category}>
+                {items.map((item) => (
+                  <CommandItem
+                    key={item.title}
+                    onSelect={() => handleSelect(item.url)}
+                    className="cursor-pointer"
+                  >
+                    {item.title}
+                  </CommandItem>
+                ))}
+              </CommandGroup>
+            ))}
+          </CommandList>
+        </Command>
+      </PopoverContent>
+    </Popover>
   );
 };
 
