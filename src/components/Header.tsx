@@ -1,4 +1,3 @@
-
 import { Search, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,7 +11,7 @@ const Header = () => {
           <div className="flex items-center space-x-6">
             <div className="flex items-center space-x-2">
               <Mail className="w-4 h-4" />
-              <span>[email protected]</span>
+              <span>gurudeok@gmail.com</span>
             </div>
             <div className="flex items-center space-x-2">
               <Phone className="w-4 h-4" />
