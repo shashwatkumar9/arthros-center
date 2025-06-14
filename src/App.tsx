@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -40,6 +41,21 @@ import UCLReconstruction from "./pages/UCLReconstruction";
 import RotatorCuffProcedures from "./pages/RotatorCuffProcedures";
 import ShoulderInstabilityProcedures from "./pages/ShoulderInstabilityProcedures";
 import ElbowProcedures from "./pages/ElbowProcedures";
+import HipReplacementProcedures from "./pages/HipReplacementProcedures";
+import HipArthroscopyProcedures from "./pages/HipArthroscopyProcedures";
+import PelvisProcedures from "./pages/PelvisProcedures";
+import CervicalSpineProcedures from "./pages/CervicalSpineProcedures";
+import LumbarSpineProcedures from "./pages/LumbarSpineProcedures";
+import MinimallyInvasiveSpineProcedures from "./pages/MinimallyInvasiveSpineProcedures";
+import AthleticInjuriesProcedures from "./pages/AthleticInjuriesProcedures";
+import PerformanceProcedures from "./pages/PerformanceProcedures";
+import SpecializedCareProcedures from "./pages/SpecializedCareProcedures";
+import HandSurgeryProcedures from "./pages/HandSurgeryProcedures";
+import WristSurgeryProcedures from "./pages/WristSurgeryProcedures";
+import NerveSurgeryProcedures from "./pages/NerveSurgeryProcedures";
+import FootSurgeryProcedures from "./pages/FootSurgeryProcedures";
+import AnkleSurgeryProcedures from "./pages/AnkleSurgeryProcedures";
+import SportsInjuriesProcedures from "./pages/SportsInjuriesProcedures";
 
 const queryClient = new QueryClient();
 
@@ -96,6 +112,31 @@ const App = () => (
           <Route path="/rotator-cuff-procedures" element={<RotatorCuffProcedures />} />
           <Route path="/shoulder-instability-procedures" element={<ShoulderInstabilityProcedures />} />
           <Route path="/elbow-procedures" element={<ElbowProcedures />} />
+          
+          {/* Hip & Pelvis Category Pages */}
+          <Route path="/hip-replacement-procedures" element={<HipReplacementProcedures />} />
+          <Route path="/hip-arthroscopy-procedures" element={<HipArthroscopyProcedures />} />
+          <Route path="/pelvis-procedures" element={<PelvisProcedures />} />
+          
+          {/* Spine Category Pages */}
+          <Route path="/cervical-spine-procedures" element={<CervicalSpineProcedures />} />
+          <Route path="/lumbar-spine-procedures" element={<LumbarSpineProcedures />} />
+          <Route path="/minimally-invasive-spine-procedures" element={<MinimallyInvasiveSpineProcedures />} />
+          
+          {/* Sports Medicine Category Pages */}
+          <Route path="/athletic-injuries-procedures" element={<AthleticInjuriesProcedures />} />
+          <Route path="/performance-procedures" element={<PerformanceProcedures />} />
+          <Route path="/specialized-care-procedures" element={<SpecializedCareProcedures />} />
+          
+          {/* Hand & Wrist Category Pages */}
+          <Route path="/hand-surgery-procedures" element={<HandSurgeryProcedures />} />
+          <Route path="/wrist-surgery-procedures" element={<WristSurgeryProcedures />} />
+          <Route path="/nerve-surgery-procedures" element={<NerveSurgeryProcedures />} />
+          
+          {/* Foot & Ankle Category Pages */}
+          <Route path="/foot-surgery-procedures" element={<FootSurgeryProcedures />} />
+          <Route path="/ankle-surgery-procedures" element={<AnkleSurgeryProcedures />} />
+          <Route path="/sports-injuries-procedures" element={<SportsInjuriesProcedures />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
