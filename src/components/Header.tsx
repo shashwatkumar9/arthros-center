@@ -1,8 +1,83 @@
+
 import { Search, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+  DropdownMenuSeparator,
+  DropdownMenuLabel,
+} from "@/components/ui/dropdown-menu";
 
 const Header = () => {
+  const kneeServices = [
+    { category: "ACL Procedures", items: ["ACL Reconstruction", "ACL Repair", "Revision ACL Surgery", "ACL with Meniscus Repair"] },
+    { category: "PCL & Multi-ligament", items: ["PCL Reconstruction", "MCL Reconstruction", "Multi-ligament Reconstruction", "Posterolateral Corner Repair"] },
+    { category: "Other Knee Procedures", items: ["Meniscus Repair", "Knee Replacement", "Patella Stabilization", "Cartilage Restoration"] }
+  ];
+
+  const shoulderServices = [
+    { category: "Rotator Cuff", items: ["Rotator Cuff Repair", "Massive Rotator Cuff Repair", "Rotator Cuff Reconstruction"] },
+    { category: "Shoulder Instability", items: ["Bankart Repair", "Latarjet Procedure", "SLAP Repair"] },
+    { category: "Elbow Procedures", items: ["Tennis Elbow Surgery", "Golfer's Elbow Treatment", "Elbow Arthroscopy", "UCL Reconstruction"] }
+  ];
+
+  const hipServices = [
+    { category: "Hip Replacement", items: ["Total Hip Replacement", "Hip Resurfacing", "Revision Hip Surgery"] },
+    { category: "Hip Arthroscopy", items: ["FAI Surgery", "Labral Repair", "Hip Impingement Treatment"] },
+    { category: "Pelvis Procedures", items: ["Pelvic Fracture Repair", "Sacroiliac Joint Treatment"] }
+  ];
+
+  const spineServices = [
+    { category: "Cervical Spine", items: ["Cervical Disc Replacement", "Cervical Fusion", "Cervical Laminectomy"] },
+    { category: "Lumbar Spine", items: ["Lumbar Fusion", "Disc Replacement", "Microdiscectomy", "Spinal Stenosis Surgery"] },
+    { category: "Minimally Invasive", items: ["Endoscopic Spine Surgery", "Percutaneous Procedures"] }
+  ];
+
+  const sportsServices = [
+    { category: "Athletic Injuries", items: ["ACL Injuries", "Meniscus Tears", "Shoulder Dislocations", "Ankle Sprains"] },
+    { category: "Performance", items: ["Return to Sport Programs", "Injury Prevention", "Sports Physicals"] },
+    { category: "Specialized Care", items: ["Concussion Management", "Overuse Injuries", "Youth Sports Medicine"] }
+  ];
+
+  const handServices = [
+    { category: "Hand Surgery", items: ["Carpal Tunnel Release", "Trigger Finger Surgery", "Dupuytren's Surgery", "Hand Fracture Repair"] },
+    { category: "Wrist Surgery", items: ["Wrist Arthroscopy", "TFCC Repair", "Wrist Fracture Surgery", "Ganglion Cyst Removal"] },
+    { category: "Nerve Surgery", items: ["Cubital Tunnel Surgery", "Nerve Repair", "Nerve Transfer"] }
+  ];
+
+  const footServices = [
+    { category: "Foot Surgery", items: ["Bunion Surgery", "Hammertoe Correction", "Plantar Fasciitis Surgery", "Achilles Repair"] },
+    { category: "Ankle Surgery", items: ["Ankle Arthroscopy", "Ankle Replacement", "Ankle Fusion", "Ligament Reconstruction"] },
+    { category: "Sports Injuries", items: ["Ankle Sprains", "Jones Fracture", "Turf Toe Treatment"] }
+  ];
+
+  const renderDropdownMenu = (title: string, services: { category: string; items: string[] }[]) => (
+    <DropdownMenu>
+      <DropdownMenuTrigger className="hover:text-cyan-400 transition-colors flex items-center space-x-1 bg-transparent border-none text-white text-sm">
+        <span>{title}</span>
+        <span className="text-xs">▼</span>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-80 bg-white border border-gray-200 shadow-lg z-50">
+        {services.map((service, index) => (
+          <div key={index}>
+            <DropdownMenuLabel className="text-slate-800 font-semibold">
+              {service.category}
+            </DropdownMenuLabel>
+            {service.items.map((item, itemIndex) => (
+              <DropdownMenuItem key={itemIndex} className="text-slate-600 hover:bg-slate-100 cursor-pointer">
+                {item}
+              </DropdownMenuItem>
+            ))}
+            {index < services.length - 1 && <DropdownMenuSeparator />}
+          </div>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
+  );
+
   return (
     <>
       {/* Top Contact Bar */}
@@ -60,34 +135,13 @@ const Header = () => {
       <div className="bg-slate-700 text-white py-3">
         <div className="container mx-auto px-4">
           <nav className="flex space-x-8 text-sm">
-            <a href="#" className="hover:text-cyan-400 transition-colors flex items-center space-x-1">
-              <span>Knee Surgeries</span>
-              <span className="text-xs">▼</span>
-            </a>
-            <a href="#" className="hover:text-cyan-400 transition-colors flex items-center space-x-1">
-              <span>Shoulder & Elbow</span>
-              <span className="text-xs">▼</span>
-            </a>
-            <a href="#" className="hover:text-cyan-400 transition-colors flex items-center space-x-1">
-              <span>Hip & Pelvis</span>
-              <span className="text-xs">▼</span>
-            </a>
-            <a href="#" className="hover:text-cyan-400 transition-colors flex items-center space-x-1">
-              <span>Spine</span>
-              <span className="text-xs">▼</span>
-            </a>
-            <a href="#" className="hover:text-cyan-400 transition-colors flex items-center space-x-1">
-              <span>Sports Medicine</span>
-              <span className="text-xs">▼</span>
-            </a>
-            <a href="#" className="hover:text-cyan-400 transition-colors flex items-center space-x-1">
-              <span>Hand & Wrist</span>
-              <span className="text-xs">▼</span>
-            </a>
-            <a href="#" className="hover:text-cyan-400 transition-colors flex items-center space-x-1">
-              <span>Foot & Ankle</span>
-              <span className="text-xs">▼</span>
-            </a>
+            {renderDropdownMenu("Knee Surgeries", kneeServices)}
+            {renderDropdownMenu("Shoulder & Elbow", shoulderServices)}
+            {renderDropdownMenu("Hip & Pelvis", hipServices)}
+            {renderDropdownMenu("Spine", spineServices)}
+            {renderDropdownMenu("Sports Medicine", sportsServices)}
+            {renderDropdownMenu("Hand & Wrist", handServices)}
+            {renderDropdownMenu("Foot & Ankle", footServices)}
           </nav>
         </div>
       </div>
