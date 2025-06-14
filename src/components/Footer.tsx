@@ -1,3 +1,4 @@
+
 import { Mail, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -153,12 +154,12 @@ const Footer = () => {
         <div className="border-t border-slate-700 mt-12 pt-8">
           <div className="flex justify-between items-center text-sm">
             <div>
-              <span>© 2023 Arthros Center. All rights reserved.</span>
+              <span>© 2025 Arthros Center. All rights reserved.</span>
             </div>
             <div className="flex space-x-6">
-              <a href="#" className="hover:text-cyan-400 transition-colors">Privacy Policy</a>
-              <a href="#" className="hover:text-cyan-400 transition-colors">Terms & Conditions</a>
-              <a href="#" className="hover:text-cyan-400 transition-colors">Sitemap</a>
+              <Link to="/privacy-policy" className="hover:text-cyan-400 transition-colors">Privacy Policy</Link>
+              <Link to="/terms-conditions" className="hover:text-cyan-400 transition-colors">Terms & Conditions</Link>
+              <Link to="/sitemap" className="hover:text-cyan-400 transition-colors">Sitemap</Link>
             </div>
           </div>
         </div>
