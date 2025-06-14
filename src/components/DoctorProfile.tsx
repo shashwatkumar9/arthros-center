@@ -16,18 +16,19 @@ const DoctorProfile = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center gap-12">
           <div className="flex-1">
-            <Card className="bg-gradient-to-br from-cyan-500 to-blue-600 border-0 overflow-hidden">
-              <CardContent className="p-0 relative">
-                <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-sm font-medium">
-                  Save
+            <div className="relative">
+              <div className="w-96 h-96 rounded-full bg-gradient-to-br from-cyan-400 to-blue-600 p-1">
+                <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/74ef67d4-adc4-4766-b6ea-058397eff73b.png" 
+                    alt="Dr. Gurudeo Kumar" 
+                    className="w-full h-full object-cover rounded-full"
+                  />
                 </div>
-                <img 
-                  src="/lovable-uploads/d3d7a44e-0f69-496f-b288-3983f1d98963.png" 
-                  alt="Dr. Gurudeo Kumar" 
-                  className="w-full h-auto object-cover"
-                />
-              </CardContent>
-            </Card>
+              </div>
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-cyan-400 rounded-full animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-blue-500 rounded-full animate-pulse"></div>
+            </div>
           </div>
 
           <div className="flex-1">
@@ -57,7 +58,7 @@ const DoctorProfile = () => {
               <Button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3">
                 Book Appointment
               </Button>
-              <Button variant="outline" className="border-slate-400 text-slate-300 hover:bg-slate-800 px-8 py-3">
+              <Button variant="outline" className="border-blue-400 text-blue-400 hover:bg-blue-600 hover:text-white px-8 py-3">
                 View Full Profile
               </Button>
             </div>
