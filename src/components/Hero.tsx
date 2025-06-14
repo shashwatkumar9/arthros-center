@@ -9,7 +9,7 @@ const Hero = () => {
           <div className="flex-1 max-w-2xl">
             <h1 className="text-5xl font-bold text-white mb-6 leading-tight">
               Advanced Orthopedic Care for{" "}
-              <span className="text-cyan-400">Active Lives</span>
+              <span className="text-cyan-400">Everyone!</span>
             </h1>
             <p className="text-xl text-slate-300 mb-8 leading-relaxed">
               Specialized treatments and personalized care for every 
