@@ -45,6 +45,7 @@ const Header = () => {
   const shoulderServices = [
     { 
       category: "Rotator Cuff", 
+      route: "/rotator-cuff-procedures",
       items: [
         { name: "Rotator Cuff Repair", route: "/rotator-cuff-repair" },
         { name: "Massive Rotator Cuff Repair", route: "/massive-rotator-cuff-repair" },
@@ -53,6 +54,7 @@ const Header = () => {
     },
     { 
       category: "Shoulder Instability", 
+      route: "/shoulder-instability-procedures",
       items: [
         { name: "Bankart Repair", route: "/bankart-repair" },
         { name: "Latarjet Procedure", route: "/latarjet-procedure" },
@@ -61,6 +63,7 @@ const Header = () => {
     },
     { 
       category: "Elbow Procedures", 
+      route: "/elbow-procedures",
       items: [
         { name: "Tennis Elbow Surgery", route: "/tennis-elbow-surgery" },
         { name: "Golfer's Elbow Treatment", route: "/golfers-elbow-treatment" },
@@ -167,7 +170,7 @@ const Header = () => {
           <div className="grid grid-cols-3 gap-6">
             {services.map((service, index) => (
               <div key={index} className="space-y-3">
-                <Link to={linkPath} className="block">
+                <Link to={service.route} className="block">
                   <h4 className="text-slate-800 font-semibold text-base mb-3 text-blue-700 border-b border-blue-100 pb-2 hover:text-blue-900 transition-colors">
                     {service.category}
                   </h4>

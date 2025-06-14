@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -38,6 +37,9 @@ import TennisElbowSurgery from "./pages/TennisElbowSurgery";
 import GolfersElbowTreatment from "./pages/GolfersElbowTreatment";
 import ElbowArthroscopy from "./pages/ElbowArthroscopy";
 import UCLReconstruction from "./pages/UCLReconstruction";
+import RotatorCuffProcedures from "./pages/RotatorCuffProcedures";
+import ShoulderInstabilityProcedures from "./pages/ShoulderInstabilityProcedures";
+import ElbowProcedures from "./pages/ElbowProcedures";
 
 const queryClient = new QueryClient();
 
@@ -89,6 +91,11 @@ const App = () => (
           <Route path="/golfers-elbow-treatment" element={<GolfersElbowTreatment />} />
           <Route path="/elbow-arthroscopy" element={<ElbowArthroscopy />} />
           <Route path="/ucl-reconstruction" element={<UCLReconstruction />} />
+          
+          {/* Shoulder & Elbow Category Pages */}
+          <Route path="/rotator-cuff-procedures" element={<RotatorCuffProcedures />} />
+          <Route path="/shoulder-instability-procedures" element={<ShoulderInstabilityProcedures />} />
+          <Route path="/elbow-procedures" element={<ElbowProcedures />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
