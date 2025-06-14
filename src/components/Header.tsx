@@ -57,13 +57,13 @@ const Header = () => {
         <span>{title}</span>
         <span className="text-xs">▼</span>
       </HoverCardTrigger>
-      <HoverCardContent className="w-[600px] bg-white border border-gray-200 shadow-2xl z-50 p-0 rounded-lg overflow-hidden">
+      <HoverCardContent className="w-[800px] bg-white border border-gray-200 shadow-2xl z-50 p-0 rounded-lg overflow-hidden">
         <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white p-4">
           <h3 className="font-bold text-lg">{title}</h3>
           <p className="text-blue-100 text-sm">Specialized procedures and treatments</p>
         </div>
-        <div className="p-6 max-h-96 overflow-y-auto">
-          <div className="grid grid-cols-2 gap-8">
+        <div className="p-6">
+          <div className="grid grid-cols-3 gap-6">
             {services.map((service, index) => (
               <div key={index} className="space-y-3">
                 <h4 className="text-slate-800 font-semibold text-base mb-3 text-blue-700 border-b border-blue-100 pb-2">
