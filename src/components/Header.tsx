@@ -3,13 +3,10 @@ import { Search, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-  DropdownMenuSeparator,
-  DropdownMenuLabel,
-} from "@/components/ui/dropdown-menu";
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger,
+} from "@/components/ui/hover-card";
 
 const Header = () => {
   const kneeServices = [
@@ -54,28 +51,39 @@ const Header = () => {
     { category: "Sports Injuries", items: ["Ankle Sprains", "Jones Fracture", "Turf Toe Treatment"] }
   ];
 
-  const renderDropdownMenu = (title: string, services: { category: string; items: string[] }[]) => (
-    <DropdownMenu>
-      <DropdownMenuTrigger className="hover:text-cyan-400 transition-colors flex items-center space-x-1 bg-transparent border-none text-white text-sm">
+  const renderHoverMenu = (title: string, services: { category: string; items: string[] }[]) => (
+    <HoverCard openDelay={0} closeDelay={100}>
+      <HoverCardTrigger className="hover:text-cyan-400 transition-colors flex items-center space-x-1 bg-transparent border-none text-white text-sm cursor-pointer px-3 py-2 rounded-md hover:bg-slate-600/50">
         <span>{title}</span>
         <span className="text-xs">▼</span>
-      </DropdownMenuTrigger>
-      <DropdownMenuContent className="w-80 bg-white border border-gray-200 shadow-lg z-50">
-        {services.map((service, index) => (
-          <div key={index}>
-            <DropdownMenuLabel className="text-slate-800 font-semibold">
-              {service.category}
-            </DropdownMenuLabel>
-            {service.items.map((item, itemIndex) => (
-              <DropdownMenuItem key={itemIndex} className="text-slate-600 hover:bg-slate-100 cursor-pointer">
-                {item}
-              </DropdownMenuItem>
-            ))}
-            {index < services.length - 1 && <DropdownMenuSeparator />}
-          </div>
-        ))}
-      </DropdownMenuContent>
-    </DropdownMenu>
+      </HoverCardTrigger>
+      <HoverCardContent className="w-96 bg-white border border-gray-200 shadow-2xl z-50 p-0 rounded-lg overflow-hidden">
+        <div className="bg-gradient-to-r from-blue-600 to-cyan-600 text-white p-4">
+          <h3 className="font-bold text-lg">{title}</h3>
+          <p className="text-blue-100 text-sm">Specialized procedures and treatments</p>
+        </div>
+        <div className="p-4 max-h-80 overflow-y-auto">
+          {services.map((service, index) => (
+            <div key={index} className="mb-4 last:mb-0">
+              <h4 className="text-slate-800 font-semibold text-sm mb-2 text-blue-700 border-b border-blue-100 pb-1">
+                {service.category}
+              </h4>
+              <div className="grid gap-1">
+                {service.items.map((item, itemIndex) => (
+                  <button
+                    key={itemIndex}
+                    className="text-slate-600 hover:text-blue-700 hover:bg-blue-50 text-left text-sm py-2 px-3 rounded-md transition-all duration-200 hover:translate-x-1"
+                    onClick={() => console.log(`Selected: ${item}`)}
+                  >
+                    {item}
+                  </button>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </HoverCardContent>
+    </HoverCard>
   );
 
   return (
@@ -132,16 +140,16 @@ const Header = () => {
       </header>
 
       {/* Services Sub-menu */}
-      <div className="bg-slate-700 text-white py-3">
+      <div className="bg-slate-700 text-white py-3 shadow-lg">
         <div className="container mx-auto px-4">
-          <nav className="flex space-x-8 text-sm">
-            {renderDropdownMenu("Knee Surgeries", kneeServices)}
-            {renderDropdownMenu("Shoulder & Elbow", shoulderServices)}
-            {renderDropdownMenu("Hip & Pelvis", hipServices)}
-            {renderDropdownMenu("Spine", spineServices)}
-            {renderDropdownMenu("Sports Medicine", sportsServices)}
-            {renderDropdownMenu("Hand & Wrist", handServices)}
-            {renderDropdownMenu("Foot & Ankle", footServices)}
+          <nav className="flex space-x-2 text-sm">
+            {renderHoverMenu("Knee Surgeries", kneeServices)}
+            {renderHoverMenu("Shoulder & Elbow", shoulderServices)}
+            {renderHoverMenu("Hip & Pelvis", hipServices)}
+            {renderHoverMenu("Spine", spineServices)}
+            {renderHoverMenu("Sports Medicine", sportsServices)}
+            {renderHoverMenu("Hand & Wrist", handServices)}
+            {renderHoverMenu("Foot & Ankle", footServices)}
           </nav>
         </div>
       </div>
