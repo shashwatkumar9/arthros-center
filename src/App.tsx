@@ -78,6 +78,11 @@ import MeniscusTears from "./pages/MeniscusTears";
 import ShoulderDislocations from "./pages/ShoulderDislocations";
 import AnkleSprains from "./pages/AnkleSprains";
 import ReturnToSportPrograms from "./pages/ReturnToSportPrograms";
+import InjuryPrevention from "./pages/InjuryPrevention";
+import SportsPhysicals from "./pages/SportsPhysicals";
+import ConcussionManagement from "./pages/ConcussionManagement";
+import OveruseInjuries from "./pages/OveruseInjuries";
+import YouthSportsMedicine from "./pages/YouthSportsMedicine";
 
 const queryClient = new QueryClient();
 
@@ -172,6 +177,11 @@ const App = () => (
           <Route path="/shoulder-dislocations" element={<ShoulderDislocations />} />
           <Route path="/ankle-sprains" element={<AnkleSprains />} />
           <Route path="/return-to-sport-programs" element={<ReturnToSportPrograms />} />
+          <Route path="/injury-prevention" element={<InjuryPrevention />} />
+          <Route path="/sports-physicals" element={<SportsPhysicals />} />
+          <Route path="/concussion-management" element={<ConcussionManagement />} />
+          <Route path="/overuse-injuries" element={<OveruseInjuries />} />
+          <Route path="/youth-sports-medicine" element={<YouthSportsMedicine />} />
           
           {/* Sports Medicine Category Pages */}
           <Route path="/athletic-injuries-procedures" element={<AthleticInjuriesProcedures />} />
